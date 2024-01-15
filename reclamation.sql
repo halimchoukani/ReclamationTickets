@@ -82,6 +82,7 @@ CREATE TABLE `ticket` (
   `dateCloture` date NOT NULL,
   `HeureCloture` time NOT NULL,
   `ticketId` int(11) NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
