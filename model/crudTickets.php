@@ -36,7 +36,7 @@ class CrudTicket
         $stmt = $this->pdo->query($req);
         return $stmt->fetch();
     }
-    public function getByStatus($statut)
+    public function getByStatut($statut)
     {
         $req = "SELECT * FROM ticket WHERE statut={$statut}";
         $stmt = $this->pdo->query($req);
@@ -49,4 +49,5 @@ class CrudTicket
         $stmt = $this->pdo->exec($req);
         return $stmt;
     }
+    
 }
