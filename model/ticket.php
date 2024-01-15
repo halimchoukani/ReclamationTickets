@@ -1,7 +1,8 @@
 <?php
 class Ticket{
     private $ticketId;
-    private $date_heure;
+    private $date;
+    private $heure;
     private $contact;
     private $demande;
     private $diagnostique;
@@ -18,10 +19,16 @@ class Ticket{
         $this->ticketId=$ticketId;
     }
     public function getDate(){
-      return $this->date_heure;
+      return $this->date;
     }
     public function setDate($date){
-        $this->date_heure=$date;
+        $this->date=$date;
+    }
+    public function getHeure(){
+      return $this->heure;
+    }
+    public function setHeure($heure){
+        $this->heure=$heure;
     }
     public function getContact(){
       return $this->contact;
