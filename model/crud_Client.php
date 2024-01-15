@@ -9,7 +9,7 @@ class CRUD
         $this->pdo = $obj->getConnexion();
        
     }
-function update($ref){
+function update($email){
         $a = $crud->RecupererApp($ref);
         $prop = $a->getProp();
         $localite = $a->getLocalite();
@@ -23,7 +23,7 @@ function update($ref){
         return $res;
 
     }
-    function ajouteApp(appartement $a)
+    function ajoutClient(appartement $a)
     {
         $prop = $a->getProp();
         $localite = $a->getLocalite();
