@@ -81,7 +81,7 @@ CREATE TABLE `ticket` (
   `CloturePar` varchar(30) NOT NULL,
   `dateCloture` date NOT NULL,
   `HeureCloture` time NOT NULL,
-  `ticketId` int(11) NOT NULL
+  `ticketId` int(11) NOT NULL AUTO_INCREMENT
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
