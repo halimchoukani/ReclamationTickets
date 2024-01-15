@@ -1,12 +1,12 @@
 <?php
-require_once('../config/connexion.php');
+require_once('../config/connection.php');
 class CRUD
 {   protected $type;
     protected $pdo;
     function __construct()
     {
-        $obj = new connexion;
-        $this->pdo = $obj->getConnexion();
+        $obj = new connection();
+        $this->pdo = $obj->getConnection();
        
     }
     
@@ -23,7 +23,7 @@ class CRUD
     function Afficher($email)
     {
 
-        $sql = "select *  from account where email=$email and type=$type;";
+        $sql = "select *  from account where email=$email and type=$this->type;";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }
