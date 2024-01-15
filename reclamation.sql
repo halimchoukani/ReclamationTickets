@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 15 jan. 2024 à 10:20
+-- Généré le : lun. 15 jan. 2024 à 15:39
 -- Version du serveur : 10.4.28-MariaDB
 -- Version de PHP : 8.2.4
 
@@ -81,7 +81,7 @@ CREATE TABLE `ticket` (
   `CloturePar` varchar(30) NOT NULL,
   `dateCloture` date NOT NULL,
   `HeureCloture` time NOT NULL,
-  `ticketId` int(11) NOT NULL AUTO_INCREMENT
+  `ticketId` int(11) NOT NULL
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -116,6 +116,16 @@ ALTER TABLE `ticket`
   ADD PRIMARY KEY (`ticketId`),
   ADD KEY `fk_ticket2` (`contact`),
   ADD KEY `fk_ticket1` (`CloturePar`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `ticket`
+--
+ALTER TABLE `ticket`
+  MODIFY `ticketId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Contraintes pour les tables déchargées
