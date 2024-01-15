@@ -1,7 +1,7 @@
 <?php
 require_once('../config/connexion.php');
 class CRUD
-{   protected $nature;
+{   protected $type;
     protected $pdo;
     function __construct()
     {
@@ -23,7 +23,7 @@ class CRUD
     function Afficher($email)
     {
 
-        $sql = "select *  from account where email=$email;";
+        $sql = "select *  from account where email=$email and type=$type;";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }
