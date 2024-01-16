@@ -101,7 +101,9 @@
         <div style="width: 438px; height: 0px; left: 1196px; top: 438px; position: absolute; transform: rotate(-90deg); transform-origin: 0 0; border: 1px #C0C0C0 solid"></div>
     </div>
     <div style="width: 507px; height: 52.94px; left: 787px; top: 376px; position: absolute; background: #EDEDED; border-radius: 15px"></div>
+
     <div style="width: 128px; height: 22px; left: 805px; top: 391.53px; position: absolute; color: #B3B3B3; font-size: 20px; font-family: Inter; font-weight: 800; word-wrap: break-word">Recherche...</div>
+    
     <div style="width: 37px; height: 37px; left: 1244px; top: 383.53px; position: absolute"></div>
     <div style="width: 26.96px; height: 26.96px; left: 1248.62px; top: 388.15px; position: absolute;"><i class="fa-solid fa-magnifying-glass"></i></div>
     <div style="width: 1188px; height: 61px; left: 98px; top: 473px; position: absolute">
