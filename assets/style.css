@@ -81,6 +81,7 @@ body {
   list-style: none;
   gap: 20px;
   padding: 0 1em;
+  z-index: 999;
 }
 
 .nav-window li a {

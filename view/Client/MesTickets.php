@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="../../assets/style.css">
   <style>
     .dropdown-content {
       display: none;
@@ -38,22 +39,17 @@
       var periodDropdown = document.querySelector(".period-dropdown-content");
       var statutDropdown = document.querySelector(".statut-dropdown-content");
 
-      // Show Période dropdown on hover
-      document.querySelector(".fa-chevron-down.period").addEventListener("mouseenter", function() {
+      document.querySelector(".fa-chevron-down.period").addEventListener("click", function() {
         periodDropdown.style.display = "block";
       });
 
-      // Hide Période dropdown when mouse leaves
       document.querySelector(".fa-chevron-down.period").addEventListener("mouseleave", function() {
         periodDropdown.style.display = "none";
       });
 
-      // Show Statut dropdown on hover
       document.querySelector(".fa-chevron-down.statut").addEventListener("mouseenter", function() {
         statutDropdown.style.display = "block";
       });
-
-      // Hide Statut dropdown when mouse leaves
       document.querySelector(".fa-chevron-down.statut").addEventListener("mouseleave", function() {
         statutDropdown.style.display = "none";
       });
@@ -78,7 +74,43 @@
 </head>
 
 <body style="background: #F0F0F0;">
-  <?php include 'NavBarClient.php'; ?>
+  <nav class="nav">
+    <img class="logo" src="../../assets/test.png" />
+    <label class="burger" for="burger">
+      <input type="checkbox" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <ul class="nav-list">
+      <li class="list">
+        <a href="NouveauTicket.php"><img src="../../assets\plus.png" /><span>Nouveau Ticket</span></a>
+      </li>
+      <li class="list">
+        <a href="MesTickets.php"><img src="../../assets\ticketicon.png" /><span>Mes TICKETS</span></a>
+      </li>
+      <li class="list active">
+        <a href="DashboardClient.php"><img src="../../assets\moncompteicon.png" /><span>Mon COMPTE</span></a>
+      </li>
+      <li class="list">
+        <a href=""><img src="../../assets\deconnexionicon.png" /><span>Déconnexion</span></a>
+      </li>
+    </ul>
+    <ul class="nav-window" id="nav-window">
+      <li class="list">
+        <a href="NouveauTicket.php"><img src="../../assets\plus.png" /><span>Nouveau Ticket</span></a>
+      </li>
+      <li class="list active">
+        <a href="MesTickets.php"><img src="../../assets\ticketicon.png" /><span>Mes TICKETS</span></a>
+      </li>
+      <li class="list">
+        <a href="DashboardClient.php"><img src="../../assets\moncompteicon.png" /><span>Mon COMPTE</span></a>
+      </li>
+      <li class="list">
+        <a href=""><img src="../../assets\deconnexionicon.png" /><span>Déconnexion</span></a>
+      </li>
+    </ul>
+  </nav>
   <div style="width: 592px; height: 185px; left: 406px; top: 152px; position: absolute">
     <div style="width: 592px; height: 82px; left: 0px; top: 0px; position: absolute; text-align: center; color: black; font-size: 35px; font-family: Inter; font-weight: 800; word-wrap: break-word">Mes Tickets</div>
     <div style="width: 575px; height: 131px; left: 11px; top: 54px; position: absolute; text-align: center; color: black; font-size: 20px; font-family: Poppins; font-weight: 400; word-wrap: break-word">Nous sommes là pour vous aider ! <br />Pour soumettre un autre ticket<br /><br />Nous reviendrons vers vous bientôt.</div>
@@ -138,6 +170,9 @@
   </div>
   </div>
   </div>
+  <script src="../../assets/nav.js
+  ">
+  </script>
 </body>
 
 </html>
