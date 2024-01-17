@@ -85,11 +85,11 @@
     <ul class="nav-list">
       <li class="list">
         <a href="NouveauTicket.php"><img src="../../assets\plus.png" /><span>Nouveau Ticket</span></a>
-      </li>
-      <li class="list">
+      </li> 
+      <li class="list active">
         <a href="MesTickets.php"><img src="../../assets\ticketicon.png" /><span>Mes TICKETS</span></a>
       </li>
-      <li class="list active">
+      <li class="list">
         <a href="DashboardClient.php"><img src="../../assets\moncompteicon.png" /><span>Mon COMPTE</span></a>
       </li>
       <li class="list">
@@ -163,8 +163,6 @@
     </div>
 
   </div>
-  <div style="width: 1px; height: 0px; left: 565px; top: 4px; position: absolute;"><i class="fas fa-chevron-down"></i></div>
-  <div style="width: 1px; height: 0px; left: 450px; top: 4px; position: absolute;"><i class="fas fa-chevron-down"></i></div>
   </div>
 
   </div>
