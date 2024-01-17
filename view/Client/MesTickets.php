@@ -7,6 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="../../assets/mestickets.css">
   <style>
     .dropdown-content {
       display: none;
@@ -119,8 +120,43 @@
     </a>
     <h3>Nous sommes là pour vous aider !</h3>
     <h3>Pour soumettre un autre ticket </h3><h3> reviendrons vers vous bientôt.</h3>
-    <div class="search-bar"></div>
-    <div class="detail"></div>
+    <div class="search-bar">
+      <input type="text" placeholder="Recherche..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="detail">
+      <div class="detail1">
+        <span class="total"><span>320 Total</span> , Procéder a leur résolution </span>
+        <select class="periode-select" name="" id="">
+          <option value="">Periode</option>
+          <option value="">periode1</option>
+        </select>
+        <select class="statut-select" name="" id="">
+          <option value="">Statut</option>
+          <option value="">statut1</option>
+        </select>
+      </div>
+      <div class="detail2">
+        <div class="fait">
+          <span class="number"><span>120</span> <i class="fa-regular fa-circle-check"></i></span>
+          <span class="text">Fait</span>
+        </div>
+        <div class="en-cours">
+          <span class="number"><span>120</span> <i class="fa-regular fa-clock"></i></span>
+          <span class="text">En cours</span>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      <table border="1">
+        <tr>
+          <th>Numéro de ticket</th>
+          <th>Sujet</th>
+          <th>Description</th>
+          <th>Statut</th>
+        </tr>
+      </table>
+    </div>
   </div>
 
   <script src="../../assets/nav.js
