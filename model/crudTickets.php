@@ -42,12 +42,10 @@ class CrudTicket
         $stmt = $this->pdo->query($req);
         return $stmt->fetch();
     }
-
     public function supprimerTicket($tickets)
     {
         $req = "DELETE FROM immobilier WHERE reference={$tickets}";
         $stmt = $this->pdo->exec($req);
         return $stmt;
     }
-    
 }

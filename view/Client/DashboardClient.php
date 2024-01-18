@@ -11,27 +11,7 @@
 <body>
   <nav class="nav">
     <img class="logo" src="../../assets/test.png" />
-    <label class="burger" for="burger">
-      <input type="checkbox" id="burger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
     <ul class="nav-list">
-      <li class="list">
-        <a href="NouveauTicket.php"><img src="../../assets\plus.png" /><span>Nouveau Ticket</span></a>
-      </li>
-      <li class="list">
-        <a href="MesTickets.php"><img src="../../assets\ticketicon.png" /><span>Mes TICKETS</span></a>
-      </li>
-      <li class="list active">
-        <a href="DashboardClient.php"><img src="../../assets\moncompteicon.png" /><span>Mon COMPTE</span></a>
-      </li>
-      <li class="list">
-        <a href=""><img src="../../assets\deconnexionicon.png" /><span>Déconnexion</span></a>
-      </li>
-    </ul>
-    <ul class="nav-window" id="nav-window">
       <li class="list">
         <a href="NouveauTicket.php"><img src="../../assets\plus.png" /><span>Nouveau Ticket</span></a>
       </li>
