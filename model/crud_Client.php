@@ -2,6 +2,7 @@
 require_once('../config/connexion.php');
 class CRUD
 {
+    protected $type='Client';
     protected $pdo;
     function __construct()
     {
@@ -9,29 +10,28 @@ class CRUD
         $this->pdo = $obj->getConnexion();
        
     }
-function update($email){
-        $a = $crud->RecupererApp($ref);
-        $prop = $a->getProp();
-        $localite = $a->getLocalite();
-        $domaineUsage = $a->getDomaineUsage();
-        $nbPieces = $a->getNbPieces();
-        $surface = $a->getSurface();
-        $surfC= $a->getSurfaceEspaceCommun();
-        $sql = "update immobilier set ref=$ref, proprietere='$prop',  localite='$localite',  nbPieces=$nbPieces, domaineUsage='$domaineUsage',Nature='$nature', nbEtage=null,surfaceCommune='$surfC' WHERE ref=$ref";
+function update(Compte $c){
+        $email = $c->getEmail();
+        $nom = $c->getNom();
+        $prenom = $c->getPrenom();
+        $tel = $c->getTel();
+        $mot_de_passe= $c->getMot_de_passe();
+        $centre= $c->getCentre();
+        $sql = "update compte SET  nom = '$nom', prenom = '$prenom', tel = '$tel',  mot_de_passe = '$mot_de_passe',type='Client', centre = '$centre', WHERE email = '$email'";
 
         $res = $this->pdo->exec($sql);
         return $res;
 
     }
-    function ajoutClient(appartement $a)
+    function ajoutClient(Compte $c)
     {
-        $prop = $a->getProp();
-        $localite = $a->getLocalite();
-        $domaineUsage = $a->getDomaineUsage();
-        $nbPieces = $a->getNbPieces();
-        $surface = $a->getSurface();
-        $surfC= $a->getSurfaceEspaceCommun();
-        $sql = "insert into immobilier values(null,'$prop','$localite',$nbPieces,'$domaineUsage','Appartement',null,'$surfC');";
+        $email = $c->getEmail();
+        $nom = $c->getNom();
+        $prenom = $c->getPrenom();
+        $tel = $c->getTel();
+        $mot_de_passe= $c->getMot_de_passe();
+        $centre= $c->getCentre();
+        $sql = "insert into compte VALUES ('$email', '$nom', '$prenom', '$tel',null, '$mot_de_passe','Client', '$centre', 'enCours')";
         $res = $this->pdo->exec($sql);
         return $res;
 
