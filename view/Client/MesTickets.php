@@ -78,7 +78,7 @@
       xhttp.send();
 
     }
-    setInterval(table, 1);
+    setInterval(table, 60000);
   </script>
 </body>
 
