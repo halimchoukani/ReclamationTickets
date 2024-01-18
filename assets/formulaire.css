@@ -17,7 +17,10 @@
 .form label {
   font-size: 20px;
 }
-
+.form textarea {
+  min-width: 100%;
+  max-width: 100%;
+}
 .form .input {
   width: 100%;
   border: 1px solid black;

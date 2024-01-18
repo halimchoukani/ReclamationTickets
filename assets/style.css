@@ -30,6 +30,8 @@ body {
   justify-content: flex-start;
   gap: 10px;
   box-sizing: border-box;
+  height: fit-content;
+  min-height: 100vh;
 }
 .img-icon {
   display: flex;
