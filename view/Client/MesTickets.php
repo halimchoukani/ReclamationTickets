@@ -170,9 +170,7 @@
   </div>
   </div>
   </div>
-  <script src="../../assets/nav.js
-  ">
-  </script>
+  <script src="../../assets/nav.js"></script>
 </body>
 
 </html>
