@@ -1,5 +1,6 @@
 <?php
 require_once('../config/connection.php');
+require_once "account.php";
 class CRUD
 {   protected $type;
     protected $pdo;
