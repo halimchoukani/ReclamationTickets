@@ -1,0 +1,58 @@
+.Logo {
+    width: 219px;
+     height: 102px;
+     left: 206px;
+     top: 0px
+}
+.valider{
+    width: 83.34px; 
+    height: 22.91px; 
+    left: 84.77px;
+     top: 9.25px; 
+     color: white;
+     font-size: 20px;
+      font-family: Inter;
+      font-weight: 400; 
+      word-wrap: break-word;
+}
+.mdp{
+    width: 350.50px; 
+    height: 20.78px;
+     left: 18.91px;
+      top: 15.66px; 
+      color: #707070; 
+      font-size: 15px;
+       font-family: Inter;
+        font-weight: 400;
+         word-wrap: break-word"
+}
+.mail{
+    width: 350.50px; 
+    height: 20.78px;
+     left: 18.91px;
+      top: 15.66px; 
+      color: #707070; 
+      font-size: 15px;
+       font-family: Inter;
+        font-weight: 400;
+         word-wrap: break-word"
+}
+.p1{
+    width: 86.20px; 
+    height: 13.66px;
+     left: 282px; 
+     top: 557px; 
+     color: white;
+      font-size: 15px; 
+      font-family: Inter; 
+      font-weight: 400; 
+      word-wrap: break-word"
+}
+body{
+    background-image: url('image.jpeg');
+    backdrop-filter: blur(100px);
+    width: 500px;
+    height: 800px;
+    border-radius: 41px;
+    margin-left: 35%;
+}
