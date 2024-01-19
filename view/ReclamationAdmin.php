@@ -15,10 +15,10 @@
         <img class="logo" src="../../assets/test.png" />
         <ul class="nav-list">
             <li class="list">
-                <a href="NouveauTicket.php"><img src="../../assets\plus.png" /><span>APERCU</span></a>
+                <a href="NouveauTicket.php"><img src="../../assets\apercu.png" /><span>APERCU</span></a>
             </li>
             <li class="list active">
-                <a href="MesTickets.php"><img src="../../assets\ticketicon.png" /><span>TICKETS</span></a>
+                <a href="ReclamatioAdmin.php"><img src="../../assets\ticketicon.png" /><span>TICKETS</span></a>
             </li>
             <li class="list">
                 <a href="DashboardClient.php"><img src="../../assets\moncompteicon.png" /><span>COMPTE</span></a>
