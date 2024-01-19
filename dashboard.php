@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if ($_SESSION["email"] == null) {
+  header("location:login.php");
+} else {
+  $type = $_SESSION["type"];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,33 +16,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Client</title>
-  <link rel="stylesheet" href="../../assets/style.css">
-  <link rel="stylesheet" href="../../assets/formulaire.css">
-  <link rel="stylesheet" href="../../assets/style.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/formulaire.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
-<body>
+<body onscroll="document.querySelector('.nav').classList.add('top');">
   <nav class="nav">
-    <img class="logo" src="../../assets/test.png" />
+    <img class="logo" src="/assets/image/test.png" />
     <ul class="nav-list">
+      <?php
+      if ($type == "client") {
+        echo '<li class="list">
+        <a href="NouveauTicket.php"><img src="/assets/image\plus.png" /><span>Nouveau Ticket</span></a>
+        </li>';
+      } else {
+        echo '<li class="list">
+        <a href="apercu.php"><img src="/assets/image\1.png" /><span>Aperçu</span></a>
+        </li>';
+      }
+      ?>
       <li class="list">
-        <a href="NouveauTicket.php"><img src="../../assets\plus.png" /><span>Nouveau Ticket</span></a>
-      </li>
-      <li class="list">
-        <a href="MesTickets.php"><img src="../../assets\ticketicon.png" /><span>Mes TICKETS</span></a>
+        <a href="MesTickets.php"><img src="/assets\image/ticketicon.png" /><span>
+            <?php
+            if ($type == "client") {
+              echo "Mes Tickets";
+            } else {
+              echo "Tickets";
+            }
+            ?>
+          </span></a>
       </li>
       <li class="list active">
-        <a href="DashboardClient.php"><img src="../../assets\moncompteicon.png" /><span>Mon COMPTE</span></a>
+        <a href="DashboardClient.php"><img src="/assets\image/moncompteicon.png" /><span>Mon COMPTE</span></a>
       </li>
       <li class="list">
-        <a href=""><img src="../../assets\deconnexionicon.png" /><span>Déconnexion</span></a>
+        <a href="deconnexion.php"><img src="/assets\image/deconnexionicon.png" /><span>Déconnexion</span></a>
       </li>
     </ul>
   </nav>
   <div class="container">
     <h2>Mon Compte</h2>
     <div class="img-icon">
-      <img class="icon1" src="../../assets\moncompteicon.png" />
+      <img class="icon1" src="/assets\image/moncompteicon.png" />
     </div>
     <h3>Vous pouvez modifier vos informations personnelles</h3>
     <h3>et changer votre mot de passe.</h3>

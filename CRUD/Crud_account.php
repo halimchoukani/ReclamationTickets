@@ -1,25 +1,25 @@
 <?php
-require_once('../config/connection.php');
-require_once "account.php";
+require_once('../../config/connection.php');
+
 class CRUD
-{   protected $type;
+{
+    protected $type;
     protected $pdo;
     function __construct()
     {
         $obj = new connection();
         $this->pdo = $obj->getConnection();
-       
     }
-    
-    function Login($email,$pass)
+
+    function Login($email, $pass)
     {
 
-        $sql = "select mdp from account where email=$email and mdp=$pass;";
+        $sql = "select * from account where email='$email' and mdp='$pass';";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }
-     
-   
+
+
 
     function Afficher($email)
     {
@@ -41,7 +41,4 @@ class CRUD
         $res = $this->pdo->query($sql);
         return $res->fetchAll(PDO::FETCH_NUM);
     }
-    
-    
-    
 }

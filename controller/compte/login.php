@@ -1,15 +1,18 @@
 <?php
-require_once '../model/Crud_account.php';
+require_once '../../crud/Crud_account.php';
+session_start();
 if (isset($_POST['btn'])) {
-    $email = $_POST['email'];
-    $mdp = $_POST['mdp'];
+    $email = htmlspecialchars($_POST['email']);
+    $mdp = htmlspecialchars($_POST['mdp']);
     $crud = new CRUD();
     $result = $crud->Login($email, $mdp);
-    if ($result) {
-        echo "Bienvenue";
-
+    if ($result != null) {
+        header('location:../../index.php');
+        $_SESSION['email'] = $email;
+        $_SESSION['type'] = $result[5];
     } else {
-        echo "Mot de passe erroné , vérifiez vos données.";    }
-
+        echo "Mot de passe erroné , vérifiez vos données.";
+        $_SESSION['error'] = "Mot de passe erroné , vérifiez vos données.";
+        header('location:../../login.php');
+    }
 }
-?>

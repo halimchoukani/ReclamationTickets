@@ -36,7 +36,7 @@ select option {
 }
 
 .form button {
-  width: 100px;
+  width: 200px;
   height: 50px;
   font-size: 20px;
   border: none;
@@ -44,6 +44,7 @@ select option {
   border-radius: 15px;
   background-color: #f79422;
   color: white;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1100px) {
