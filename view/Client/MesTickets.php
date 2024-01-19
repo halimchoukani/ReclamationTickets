@@ -28,8 +28,8 @@
       </li>
     </ul>
   </nav>
-  <div class="container">
-    <h2>Mes Tickets</h2>
+  <div class="container" >
+  <h2>Mes Tickets</h2>
     <a class="img-icon" href="../Client/NouveauTicket.php">
       <img class="icon1" src="../../assets\ticketicon.png" />
       <img class="icon2" src="../../assets\plus.png" />
@@ -41,44 +41,21 @@
       <input type="text" placeholder="Recherche..." />
       <button><i class="fas fa-search"></i></button>
     </div>
-    <div class="detail">
-      <div class="detail1">
-        <span class="total"><span>320 Total</span> , Procéder a leur résolution </span>
-        <select class="periode-select" name="" id="">
-          <option value="">Periode</option>
-          <option value="">periode1</option>
-        </select>
-        <select class="statut-select" name="" id="">
-          <option value="">Statut</option>
-          <option value="">statut1</option>
-        </select>
-      </div>
-      <div class="detail2">
-        <div class="fait">
-          <span class="number"><span>120</span> <i class="fa-regular fa-circle-check"></i></span>
-          <span class="text">Fait</span>
-        </div>
-        <div class="en-cours">
-          <span class="number"><span>120</span> <i class="fa-regular fa-clock"></i></span>
-          <span class="text">En cours</span>
-        </div>
-      </div>
-    </div>
-    <div class="info" id="table">
-
+    <div id="container">
+      
     </div>
   </div>
   <script>
     function table() {
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function() {
-        document.getElementById("table").innerHTML = this.responseText;
+        document.getElementById("container").innerHTML = this.responseText;
       }
       xhttp.open("GET", "/controller/gettickets.php");
       xhttp.send();
 
     }
-    setInterval(table, 60000);
+    setInterval(table, 6000);
   </script>
 </body>
 
