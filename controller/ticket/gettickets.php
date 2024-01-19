@@ -1,7 +1,7 @@
 <?php
-require_once "../model/ticket.php";
+require_once "../../model/ticket.php";
 $ticket = new Ticket();
-require_once "../model/crudTickets.php";
+require_once "../../crud/crudTickets.php";
 $crud = new CrudTicket();
 $table = $crud->getTickets();
 $encour = $crud->getByStatutNum("enCours");

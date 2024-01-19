@@ -1,6 +1,6 @@
 <?php
-require_once "../config/connection.php";
-require_once "ticket.php";
+require_once "../../config/connection.php";
+require_once "../../model/ticket.php";
 class CrudTicket
 {
     public $pdo;
