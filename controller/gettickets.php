@@ -34,14 +34,19 @@ $fait = $crud->getByStatutNum("Cloture");
 <table border="1">
     <tr>
         <th>Numéro de ticket</th>
-        <th>Sujet</th>
+        <th>Date</th>
+        <th>Heure</th>
+        <th>Client</th>
+        <th>Contact</th>
+        <th>Date</th>
+        <th>Date</th>
         <th>Description</th>
         <th>Statut</th>
     </tr>
     <?php
     foreach ($table as $row) {
         echo "<tr>";
-        echo "<td>" . $row[0] . "</td>";
+        echo "<td>" . $row[6] . "</td>";
         echo "<td>" . $row[1] . "</td>";
         echo "<td>" . $row[2] . "</td>";
         echo "<td>" . $row[3] . "</td>";

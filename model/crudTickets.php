@@ -17,6 +17,9 @@ class CrudTicket
         $stmt = $this->pdo->exec($req);
         return $stmt;
     }
+    // public function getAllTicketsData(){
+    //     $req= "Select t.* from ticket t join account a on a.email = t.contact where a.email = '{$_SESSION['email']}'";
+    // }
     public function getTickets()
     {
         $req = "SELECT * FROM ticket";
