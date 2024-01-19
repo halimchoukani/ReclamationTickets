@@ -1,5 +1,6 @@
 <?php
 require_once('../config/connection.php');
+require_once "account.php";
 class CRUD
 {   protected $type;
     protected $pdo;
@@ -10,10 +11,10 @@ class CRUD
        
     }
     
-    function Login($email)
+    function Login($email,$pass)
     {
 
-        $sql = "select mdp from account where email=$email;";
+        $sql = "select mdp from account where email=$email and mdp=$pass;";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }
@@ -23,7 +24,7 @@ class CRUD
     function Afficher($email)
     {
 
-        $sql = "select *  from account where email=$email and type=$this->type;";
+        $sql = "select *  from account where email=$email and type='$this->type';";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }
@@ -32,6 +33,13 @@ class CRUD
         $sql = "delete from account where email=$email;";
         $res = $this->pdo->exec($sql);
         return $res;
+    }
+    function Lister()
+    {
+
+        $sql = "select *  from  account where type='$this->type';";
+        $res = $this->pdo->query($sql);
+        return $res->fetchAll(PDO::FETCH_NUM);
     }
     
     

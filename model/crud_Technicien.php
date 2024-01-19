@@ -1,5 +1,6 @@
 <?php
 require_once('../config/connexion.php');
+require_once "account.php";
 class CRUD
 {
     protected $type='Technicien';
