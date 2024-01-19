@@ -1,6 +1,7 @@
 <?php
 require_once "../../config/connection.php";
 require_once "../../model/ticket.php";
+session_start();
 class CrudTicket
 {
     public $pdo;
@@ -17,12 +18,11 @@ class CrudTicket
         $stmt = $this->pdo->exec($req);
         return $stmt;
     }
-    // public function getAllTicketsData(){
-    //     $req= "Select t.* from ticket t join account a on a.email = t.contact where a.email = '{$_SESSION['email']}'";
-    // }
+
     public function getTickets()
     {
-        $req = "SELECT * FROM ticket";
+        $req = "SELECT t.ticketid,t.demande,t.DateHeure,s.nom,t.Diagnostic,a.nom,t.Categorie,t.Priorite,t.Status FROM ticket t join account a on a.email = t.contact join societe s on s.id = a.centre
+        where (a.email = '{$_SESSION['email']}' and t.status = 'Cloture') or (t.status = 'enCours') ;";
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_NUM);

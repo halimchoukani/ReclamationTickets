@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+if ($_SESSION["email"] == null) {
+  header("location:login.php");
+} else {
+  $type = $_SESSION["type"];
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,22 +25,38 @@
   <nav class="nav">
     <img class="logo" src="../../assets/image/test.png" />
     <ul class="nav-list">
-      <li class="list">
-        <a href="NouveauTicket.php"><img src="../../assets/image\plus.png" /><span>Nouveau Ticket</span></a>
-      </li>
+      <?php
+      if ($type == "client") {
+        echo '<li class="list">
+        <a href="NouveauTicket.php"><img src="/assets/image\plus.png" /><span>Nouveau Ticket</span></a>
+        </li>';
+      } else {
+        echo '<li class="list">
+        <a href="apercu.php"><img src="/assets/image\1.png" /><span>Aperçu</span></a>
+        </li>';
+      }
+      ?>
       <li class="list active">
-        <a href="MesTickets.php"><img src="../../assets/image\ticketicon.png" /><span>Mes TICKETS</span></a>
+        <a href="MesTickets.php"><img src="/assets\image/ticketicon.png" /><span>
+            <?php
+            if ($type == "client") {
+              echo "Mes Tickets";
+            } else {
+              echo "Tickets";
+            }
+            ?>
+          </span></a>
       </li>
       <li class="list">
         <a href="DashboardClient.php"><img src="../../assets/image\moncompteicon.png" /><span>Mon COMPTE</span></a>
       </li>
       <li class="list">
-        <a href=""><img src="../../assets/image\deconnexionicon.png" /><span>Déconnexion</span></a>
+        <a href="deconnexion.php"><img src="../../assets/image\deconnexionicon.png" /><span>Déconnexion</span></a>
       </li>
     </ul>
   </nav>
-  <div class="container" >
-  <h2>Mes Tickets</h2>
+  <div class="container">
+    <h2>Mes Tickets</h2>
     <a class="img-icon" href="../Client/NouveauTicket.php">
       <img class="icon1" src="../../assets/image\ticketicon.png" />
       <img class="icon2" src="../../assets\image/plus.png" />

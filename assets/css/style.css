@@ -15,6 +15,7 @@ body {
   font-family: "Poppins", sans-serif;
   background: #f0f0f0;
 }
+
 .container-vide {
   padding: 15px;
   width: 99%;
@@ -102,7 +103,10 @@ h3 {
   z-index: 1000;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
-
+.status {
+  -webkit-user-drag: none;
+  user-select: none;
+}
 .nav .logo {
   width: 10em;
 }
