@@ -37,22 +37,19 @@
 
                             <input type="hidden" class="hide" name="token" id="token" value="">
                         </form>
-
- 
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-    
-  emailjs.init("vyazODPlaOuv7Zcdx");
+  emailjs.init("x0GNxyAPfEu14m11-");
 </script>
 <script>
   function sendEmail() {
-    emailjs.send("Gmail", "template_s799ywb", {
+    emailjs.send("service_03519p3", "template_s799ywb", {
         to_email: document.getElementById("email").value,
       
     })
@@ -68,7 +65,7 @@
 </script>
 
 <!-- Include JavaScript and jQuery libraries -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
