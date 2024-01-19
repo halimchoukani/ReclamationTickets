@@ -1,6 +1,6 @@
 <?php
-require_once "../config/connection.php";
-require_once "ticket.php";
+require_once "../../config/connection.php";
+require_once "../../model/ticket.php";
 class CrudTicket
 {
     public $pdo;
@@ -17,6 +17,9 @@ class CrudTicket
         $stmt = $this->pdo->exec($req);
         return $stmt;
     }
+    // public function getAllTicketsData(){
+    //     $req= "Select t.* from ticket t join account a on a.email = t.contact where a.email = '{$_SESSION['email']}'";
+    // }
     public function getTickets()
     {
         $req = "SELECT * FROM ticket";
@@ -38,10 +41,17 @@ class CrudTicket
     }
     public function getByStatut($statut)
     {
-        $req = "SELECT * FROM ticket WHERE statut={$statut}";
+        $req = "SELECT * FROM ticket WHERE status='{$statut}';";
         $stmt = $this->pdo->query($req);
         return $stmt->fetch();
     }
+    public function getByStatutNum($statut)
+    {
+        $req = "SELECT count(ticketId) FROM ticket WHERE status='{$statut}';";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch()[0];
+    }
+
     public function supprimerTicket($tickets)
     {
         $req = "DELETE FROM immobilier WHERE reference={$tickets}";
