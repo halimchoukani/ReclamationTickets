@@ -15,6 +15,20 @@ body {
   font-family: "Poppins", sans-serif;
   background: #f0f0f0;
 }
+.container-vide {
+  padding: 15px;
+  width: 99%;
+  border-radius: 15px;
+  background: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  box-sizing: border-box;
+  height: fit-content;
+  min-height: 100vh;
+}
 .container {
   position: absolute;
   top: calc(1em + 100px);
@@ -32,6 +46,9 @@ body {
   box-sizing: border-box;
   height: fit-content;
   min-height: 100vh;
+}
+#container{
+  width: 100%;
 }
 .img-icon {
   display: flex;
@@ -64,8 +81,8 @@ h3 {
 }
 .nav {
   padding: 1em;
-  position: absolute;
-  top: 1em;
+  position: fixed;  /* Change from absolute to fixed */
+  top: 1em;           /* Set top to 0 */
   left: 50%;
   transform: translateX(-50%);
   width: 99%;
@@ -77,7 +94,9 @@ h3 {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  z-index: 1000;    /* Set a higher z-index to ensure it appears above other elements */
 }
+
 .nav .logo {
   width: 10em;
 }

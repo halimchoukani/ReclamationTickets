@@ -38,10 +38,17 @@ class CrudTicket
     }
     public function getByStatut($statut)
     {
-        $req = "SELECT * FROM ticket WHERE statut={$statut}";
+        $req = "SELECT * FROM ticket WHERE status='{$statut}';";
         $stmt = $this->pdo->query($req);
         return $stmt->fetch();
     }
+    public function getByStatutNum($statut)
+    {
+        $req = "SELECT count(ticketId) FROM ticket WHERE status='{$statut}';";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch()[0];
+    }
+
     public function supprimerTicket($tickets)
     {
         $req = "DELETE FROM immobilier WHERE reference={$tickets}";
