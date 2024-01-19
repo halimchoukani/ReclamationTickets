@@ -1,16 +1,10 @@
 <?php
 require_once('../config/connexion.php');
 require_once "account.php";
-class CRUD
+class crud_client extends Crud
 {
     protected $type='Client';
-    protected $pdo;
-    function __construct()
-    {
-        $obj = new connexion;
-        $this->pdo = $obj->getConnexion();
-       
-    }
+    
 function update(Compte $c){
         $email = $c->getEmail();
         $nom = $c->getNom();

@@ -1,21 +1,16 @@
 <?php
 require_once('../config/connexion.php');
 require_once "account.php";
-class CRUD
+class crud_Technicien extends CRUD
 {
     protected $type='Technicien';
-    protected $pdo;
-    function __construct()
-    {
-        $obj = new connexion;
-        $this->pdo = $obj->getConnexion();
-       
-    }
+    
     function update(Compte $c){
         $email = $c->getEmail();
         $nom = $c->getNom();
         $prenom = $c->getPrenom();
         $tel = $c->getTel();
+        $centre = $c->getCentre();
         $mot_de_passe= $c->getMot_de_passe();
         $sql = "update compte SET  nom = '$nom', prenom = '$prenom', tel = '$tel',  mot_de_passe = '$mot_de_passe',type='Technicien', centre = '$centre', WHERE email = '$email'";
         $res = $this->pdo->exec($sql);
