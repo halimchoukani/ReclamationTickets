@@ -43,13 +43,14 @@ session_start();
                                     </div>
                                     <form class="user" method="post" action='controller/compte/forgot-password.php'>
                                         <?php
-                                        if (isset($_SESSION["error"])) {
+                                        if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
                                             echo '<div class="card shadow mb-4">
-                                    <div class="card-body" id="card">
+                                    <div class="card-body ' . $_SESSION["error-type"] . '" id="card">
                                         ' . $_SESSION["error"] . '
                                     </div>
-                                    </div>';
+                                </div>';
                                             unset($_SESSION["error"]);
+                                            unset($_SESSION["error-type"]);
                                         }
                                         ?>
                                         <div class="form-group">

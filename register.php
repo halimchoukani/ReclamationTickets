@@ -34,16 +34,14 @@ if (isset($_SESSION["email"])) {
                             </div>
                             <form class="user" id="registerForm" method="post" action="/controller/compte/register.php">
                                 <?php
-                                if (isset($_SESSION["error"])) {
+                                if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
                                     echo '<div class="card shadow mb-4">
-                                    <div class="card-header py-3">
-                                        <h6 class="m-0 font-weight-bold text-primary">A</h6>
-                                    </div>
-                                    <div class="card-body" id="card">
+                                    <div class="card-body ' . $_SESSION["error-type"] . '" id="card">
                                         ' . $_SESSION["error"] . '
                                     </div>
                                 </div>';
                                     unset($_SESSION["error"]);
+                                    unset($_SESSION["error-type"]);
                                 }
                                 ?>
                                 <div class="form-group row">

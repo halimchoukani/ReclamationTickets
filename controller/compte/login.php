@@ -10,10 +10,11 @@ if (isset($_POST['btn'])) {
     if ($result != null) {
         $_SESSION['email'] = $email;
         $_SESSION['type'] = $result[5];
+
         header('location:../../index.php');
     } else {
-        echo "Mot de passe erroné , vérifiez vos données.";
-        $_SESSION['error'] = "Mot de passe erroné , vérifiez vos données.";
+        $_SESSION['error'] = "Email ou mot de passe erroné , vérifiez vos données.";
+        $_SESSION["error-type"] = "bg-danger text-white";
         header('location:../../login.php');
     }
 }

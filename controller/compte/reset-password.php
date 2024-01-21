@@ -18,6 +18,7 @@ if (isset($_GET['token'])) {
                 $crud = new CRUD();
                 $crud->updatePassword($email, $mdp);
                 $_SESSION['error'] = "Mot de passe a etes modifier avec succes";
+                $_SESSION['error-type'] = "bg-success";
                 header('location:../../login.php');
             } else {
                 $code->deleteCode($token);
@@ -25,6 +26,7 @@ if (isset($_GET['token'])) {
             }
         } else {
             $_SESSION['error'] = "Mot de passe non identique";
+            $_SESSION['error-type'] = "bg-danger";
             echo "Mot de passe non identique";
             header('location:../../reset-password.php?token=' . $token);
         }
