@@ -32,7 +32,7 @@ class Crud_code
             return false;
         }
     }
-    public function generateCode($email, $length = 15)
+    public function generateCode($email, $length = 30)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
