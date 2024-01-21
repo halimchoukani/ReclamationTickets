@@ -15,6 +15,16 @@ class Crud_code
         $obj = new connection();
         $this->pdo = $obj->getConnection();
     }
+    public function deleteCode($code)
+    {
+        if ($this->codeExist($code)) {
+            $req = "delete from codeverif where code='$code'";
+            $res = $this->pdo->exec($req);
+            return $res;
+        } else {
+            return false;
+        }
+    }
     public function generateCode($length = 5)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -68,6 +78,35 @@ class Crud_code
             $mail->send();
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error : {$mail->ErrorInfo}";
+        }
+    }
+    public function verifCode($code)
+    {
+        $req = "select * from codeverif where code='$code'";
+        $res = $this->pdo->query($req);
+        $res = $res->fetch(PDO::FETCH_NUM);
+        if ($res == null) {
+            return false;
+        } else {
+            $date = date("Y-m-d H:i:s");
+            if ($date > $res[2]) {
+                return false;
+            } else {
+                $account = new CRUD();
+                $account->verifEmail($res[0]);
+                return true;
+            }
+        }
+    }
+    function codeExist($code)
+    {
+        $req = "select * from codeverif where code='$code'";
+        $res = $this->pdo->query($req);
+        $res = $res->fetch(PDO::FETCH_NUM);
+        if ($res == null) {
+            return false;
+        } else {
+            return true;
         }
     }
 }
