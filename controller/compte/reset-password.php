@@ -1,40 +1,33 @@
 <?php
 require_once '../../crud/Crud_account.php';
 require_once '../../crud/Crud_code.php';
-$token = $_GET['token'];
-
-$code = new Crud_code();
-$result = $code->verifCode($token);
-if ($result == true) {
-    $code->deleteCode($token);
-?>
-    <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
-    <div class="col-lg-6">
-        <div class="p-5">
-            <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-2">Changer le mot de passe</h1>
-            </div>
-
-            <hr>
-            <div class="text-center">
-                <a class="small" href="register.html">Create an Account!</a>
-            </div>
-            <div class="text-center">
-                <a class="small" href="login.html">Already have an account? Login!</a>
-            </div>
-        </div>
-    </div>
-<?php
-} else {
-    $code->deleteCode($token);
-?>
-    <div class="row-lg-5 text-center">
-        <img src="https://static-00.iconduck.com/assets.00/404-page-not-found-illustration-512x249-ju1c9yxg.png" alt="">
-    </div>
-    <div class="row-lg-7 text-center">
-        <h1 class="h4 text-gray-900 mb-4">Code n'existe pas</h1>
-        <a href="login.php" class="btn btn-primary">Login</a>
-    </div>
-<?php
+session_start();
+if (isset($_GET['token'])) {
+    $token = $_GET['token'];
+    if (isset($_POST['btn'])) {
+        $mdp = htmlspecialchars($_POST['newpass']);
+        $mdp2 = htmlspecialchars($_POST['cnewpass']);
+        if ($mdp == $mdp2) {
+            $code = new Crud_code();
+            $result = $code->verifCode($token);
+            if ($result == true) {
+                echo $result;
+                $email = $code->getEmail($token);
+                echo $email;
+                $code->deleteCode($token);
+                $crud = new CRUD();
+                $crud->updatePassword($email, $mdp);
+                $_SESSION['error'] = "Mot de passe a etes modifier avec succes";
+                header('location:../../login.php');
+            } else {
+                $code->deleteCode($token);
+                $_SESSION['error'] = "Lien n'existe pas";
+                header('location:../../login.php');
+            }
+        } else {
+            $_SESSION['error'] = "Mot de passe non identique";
+            echo "Mot de passe non identique";
+            header('location:../../reset-password.php?token=' . $token);
+        }
+    }
 }
-?>

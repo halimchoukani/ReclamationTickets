@@ -19,7 +19,7 @@ if (isset($_GET['token'])) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Forgot Password</title>
+    <title>Reset Password</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -38,7 +38,42 @@ if (isset($_GET['token'])) {
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <div class="row" id="col">
-
+                            <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-2">Changer le mot de passe</h1>
+                                    </div>
+                                    <form class="user" method="post" action="controller/compte/reset-password.php?token=<?php echo $token; ?>">
+                                        <?php
+                                        if (isset($_SESSION["error"])) {
+                                            echo '<div class="card shadow mb-4">
+                                    <div class="card-body" id="card">
+                                        ' . $_SESSION["error"] . '
+                                    </div>
+                                    </div>';
+                                            unset($_SESSION["error"]);
+                                        }
+                                        ?>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" aria-describedby="passwordHelp" placeholder="Enter Votre nouveau mot de passe" name="newpass">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" aria-describedby="passwordHelp" placeholder="Confirmer Votre nouveau mot de passe" name="cnewpass">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="btn">
+                                            Reset Password
+                                        </button>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="register.html">Create an Account!</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="login.html">Already have an account? Login!</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,20 +94,6 @@ if (isset($_GET['token'])) {
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
 
-    <script>
-        const xhttp = new XMLHttpRequest();
-
-        function reload() {
-            xhttp.onreadystatechange = function() {
-                if (this.readyState === 4 && this.status === 200) {
-                    document.getElementById("col").innerHTML = this.responseText;
-                }
-            };
-
-            xhttp.open("GET", "http://localhost:4000/controller/compte/reset-password.php?token=<?php echo $token; ?>", true);
-            xhttp.send();
-        }
-    </script>
 
 
 

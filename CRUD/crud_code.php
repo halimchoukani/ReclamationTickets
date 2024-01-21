@@ -15,6 +15,13 @@ class Crud_code
         $obj = new connection();
         $this->pdo = $obj->getConnection();
     }
+    public function getEmail($code)
+    {
+        $req = "select email from codeverif where code='$code'";
+        $res = $this->pdo->query($req);
+        $res = $res->fetch(PDO::FETCH_NUM);
+        return $res[0];
+    }
     public function deleteCode($code)
     {
         if ($this->codeExist($code)) {

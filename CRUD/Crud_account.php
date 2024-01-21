@@ -11,7 +11,13 @@ class CRUD
         $obj = new connection();
         $this->pdo = $obj->getConnection();
     }
-
+    function updatePassword($email, $mdp)
+    {
+        $mdp = password_hash($mdp, PASSWORD_DEFAULT);
+        $sql = "update account set mdp='$mdp' where email='$email';";
+        $res = $this->pdo->exec($sql);
+        return $res;
+    }
     function Login($email, $pass)
     {
 
