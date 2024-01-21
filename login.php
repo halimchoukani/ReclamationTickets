@@ -37,6 +37,19 @@ if (isset($_SESSION["email"])) {
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
                                     <form class="user" action="/controller/compte/login.php" method="post">
+                                        <?php
+                                        if (isset($_SESSION["error"])) {
+                                            echo '<div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">A</h6>
+                                    </div>
+                                    <div class="card-body" id="card">
+                                        ' . $_SESSION["error"] . '
+                                    </div>
+                                </div>';
+                                            unset($_SESSION["error"]);
+                                        }
+                                        ?>
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                                         </div>
@@ -56,7 +69,7 @@ if (isset($_SESSION["email"])) {
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="forgot-password.php">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="register.php">Create an Account!</a>

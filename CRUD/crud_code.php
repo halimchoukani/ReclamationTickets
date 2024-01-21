@@ -25,7 +25,7 @@ class Crud_code
             return false;
         }
     }
-    public function generateCode($length = 5)
+    public function generateCode($email, $length = 5)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
@@ -35,10 +35,10 @@ class Crud_code
         }
         $date_debut = date("Y-m-d h:i:s");
         $date_fin = date("Y-m-d H:i:s", strtotime("+60 minutes"));
-        $req = "insert into codeverif values('$code','$date_debut','$date_fin')";
+        $req = "insert into codeverif values('$code','$date_debut','$date_fin','$email')";
         $res = $this->pdo->exec($req);
         if ($res === false) {
-            return $this->generateCode($length);
+            return $this->generateCode($length, $email);
         } else {
             return $code;
         }
@@ -55,7 +55,7 @@ class Crud_code
         } else {
             $genre = "Madame";
         }
-        $token = $this->generateCode();
+        $token = $this->generateCode($email);
         require "../../vendor/autoload.php";
 
         $mail = new PHPMailer(true);
@@ -69,7 +69,7 @@ class Crud_code
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use ENCRYPTION_SMTPS for port 465
             $mail->Port       = 465; // Use 587 if you are using ENCRYPTION_STARTTLS
             $mail->SMTPDebug = 0;
-            $mail->setFrom('halimchoukani3@gmail.com', 'Helloworld');
+            $mail->setFrom('halimchoukani3@gmail.com', 'Zimys');
             $mail->addAddress($email);
 
             $mail->isHTML(true);
@@ -93,7 +93,7 @@ class Crud_code
                 return false;
             } else {
                 $account = new CRUD();
-                $account->verifEmail($res[0]);
+                $account->verifEmail($res[3]);
                 return true;
             }
         }
