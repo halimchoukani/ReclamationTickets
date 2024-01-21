@@ -36,13 +36,28 @@ class Societe
     }
     public function isExist($nom, $tel)
     {
-        $sql = "SELECT id FROM societe WHERE nom=:nom AND numTel=:tel";
-        $result = $this->cnx->prepare($sql);
-        $result->bindParam(':nom', $nom);
-        $result->bindParam(':tel', $tel);
-        $result->execute();
-        return $result->fetch(PDO::FETCH_ASSOC)['id'];
+        $sql = "SELECT id FROM societe WHERE nom = :nom AND numTel = :tel";
+        $stmt = $this->cnx->prepare($sql);
+
+        // Use try-catch for error handling
+        try {
+            $stmt->bindParam(':nom', $nom);
+            $stmt->bindParam(':tel', $tel);
+            $stmt->execute();
+
+            // Fetch the result as an associative array
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            // Return the id if a match is found, otherwise return null
+            return $result ? $result['id'] : null;
+        } catch (PDOException $e) {
+            // Handle the exception (log, display an error, etc.)
+            // Example: log the error and rethrow the exception
+            error_log("Error in isExist function: " . $e->getMessage());
+            throw $e;
+        }
     }
+
     public function deleteSociete($id)
     {
 
