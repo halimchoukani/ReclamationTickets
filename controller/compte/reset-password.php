@@ -21,8 +21,7 @@ if (isset($_GET['token'])) {
                 header('location:../../login.php');
             } else {
                 $code->deleteCode($token);
-                $_SESSION['error'] = "Lien n'existe pas";
-                header('location:../../login.php');
+                header('location:../../404.php');
             }
         } else {
             $_SESSION['error'] = "Mot de passe non identique";
