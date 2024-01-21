@@ -88,7 +88,7 @@ class CRUD
     }
     function getNomPrenomGenre($email)
     {
-        $sql = "select nom,prenom,genre from account where email='$email';";
+        $sql = "select nom,prenom,gender from account where email='$email';";
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }
