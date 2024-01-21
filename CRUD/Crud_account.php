@@ -15,9 +15,16 @@ class CRUD
     function Login($email, $pass)
     {
 
-        $sql = "select * from account where email='$email' and mdp='$pass';";
+        $sql = "select mdp from account where email='$email';";
         $res = $this->pdo->query($sql);
-        return $res->fetch(PDO::FETCH_NUM);
+        $hashedPassword = $res->fetch(PDO::FETCH_NUM)[0];
+        if (password_verify($pass, $hashedPassword)) {
+            $sql = "select * from account where email='$email';";
+            $res = $this->pdo->query($sql);
+            return $res->fetch(PDO::FETCH_NUM);
+        } else {
+            return null;
+        }
     }
 
     function Register($nom, $prenom, $email, $tel, $mdp, $type, $matricule, $status, $gender, $noms, $tels, $adresse)

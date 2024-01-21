@@ -32,7 +32,20 @@ if (isset($_SESSION["email"])) {
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user" method="post" action="controller/compte/register.php">
+                            <form class="user" id="registerForm" method="post" action="/controller/compte/register.php">
+                                <?php
+                                if (isset($_SESSION["error"])) {
+                                    echo '<div class="card shadow mb-4">
+                                    <div class="card-header py-3">
+                                        <h6 class="m-0 font-weight-bold text-primary">A</h6>
+                                    </div>
+                                    <div class="card-body" id="card">
+                                        ' . $_SESSION["error"] . '
+                                    </div>
+                                </div>';
+                                    unset($_SESSION["error"]);
+                                }
+                                ?>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Prenom" name="prenom">
@@ -49,8 +62,8 @@ if (isset($_SESSION["email"])) {
                                         </label>
                                     </div>
                                     <div class="form-check col-sm-6">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="female" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="female" id="flexRadioDefault2">
+                                        <label class="form-check-label" for="flexRadioDefault2">
                                             Female
                                         </label>
                                     </div>
@@ -87,6 +100,7 @@ if (isset($_SESSION["email"])) {
                                 <button type="submit" class="btn btn-primary btn-user btn-block" name="btn">
                                     Creer un Compte
                                 </button>
+
                             </form>
                             <hr>
                             <div class="text-center">
@@ -102,7 +116,6 @@ if (isset($_SESSION["email"])) {
         </div>
 
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -112,7 +125,6 @@ if (isset($_SESSION["email"])) {
 
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
-
 </body>
 
 </html>
