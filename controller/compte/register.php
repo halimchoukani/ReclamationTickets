@@ -24,10 +24,15 @@ if (isset($_POST["btn"])) {
         } else {
             $crud = new CRUD();
             $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tel, $adresse);
-
+            if ($genre == "male") {
+                $genre = "Monsieur";
+            } else {
+                $genre = "Madame";
+            }
             if ($result == true) {
                 $code = new Crud_code();
-                $code->sendCode($email);
+                $token = $code->generateCode($email);
+                $code->sendCode($email, 'Code de confirmation de votre compte', 'Bonjour ' . $genre . ' ' . $nom . ' ' . $prenom . " <br> C'est votre lien pour vérifier votre compte: <a href='http://localhost:4000/verification.php?token=" . $token . "'>Cliquez Ici</a>");
                 $_SESSION["error"] = "Compte créé avec succès ! Nous enverrons un email de confirmation dans les plus brefs délais";
             } else {
                 $_SESSION["error"] = "La création du compte a échoué. Veuillez vérifier vos informations.";

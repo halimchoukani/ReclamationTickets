@@ -43,19 +43,8 @@ class Crud_code
             return $code;
         }
     }
-    public function sendCode($email)
+    public function sendCode($email, $msgTitle, $msgContent)
     {
-
-        $account = new CRUD();
-        $nom = $account->getNomPrenomGenre($email)[0];
-        $prenom = $account->getNomPrenomGenre($email)[1];
-        $genre = $account->getNomPrenomGenre($email)[2];
-        if ($genre == "male") {
-            $genre = "Monsieur";
-        } else {
-            $genre = "Madame";
-        }
-        $token = $this->generateCode($email);
         require "../../vendor/autoload.php";
 
         $mail = new PHPMailer(true);
@@ -73,8 +62,8 @@ class Crud_code
             $mail->addAddress($email);
 
             $mail->isHTML(true);
-            $mail->Subject = 'Code de confirmation de votre compte';
-            $mail->Body = 'Bonjour ' . $genre . ' ' . $nom . ' ' . $prenom . " <br> C'est votre lien pour vérifier votre compte: <a href='http://localhost:4000/verification.php?token=" . $token . "'>Cliquez Ici</a>";
+            $mail->Subject = $msgTitle;
+            $mail->Body = $msgContent;
             $mail->send();
         } catch (Exception $e) {
             echo "Message could not be sent. Mailer Error : {$mail->ErrorInfo}";
