@@ -86,6 +86,12 @@ class CRUD
         $res = $this->pdo->exec($sql);
         return $res;
     }
+    function getNomPrenomGenre($email)
+    {
+        $sql = "select nom,prenom,genre from account where email='$email';";
+        $res = $this->pdo->query($sql);
+        return $res->fetch(PDO::FETCH_NUM);
+    }
     function Lister()
     {
 

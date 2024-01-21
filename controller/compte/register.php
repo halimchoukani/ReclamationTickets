@@ -2,6 +2,7 @@
 session_start();
 
 require_once '../../crud/Crud_account.php';
+require_once '../../crud/crud_code.php';
 
 $_SESSION["error"] = "";
 
@@ -23,9 +24,9 @@ if (isset($_POST["btn"])) {
         } else {
             $crud = new CRUD();
             $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tel, $adresse);
-
+            
             if ($result == true) {
-
+                $code = new Code();
                 $_SESSION["error"] = "Compte créé avec succès ! Nous enverrons un email de confirmation dans les plus brefs délais";
             } else {
                 $_SESSION["error"] = "La création du compte a échoué. Veuillez vérifier vos informations.";
