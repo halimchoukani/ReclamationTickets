@@ -44,15 +44,10 @@ class Societe
             $stmt->bindParam(':nom', $nom);
             $stmt->bindParam(':tel', $tel);
             $stmt->execute();
-
-            // Fetch the result as an associative array
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Return the id if a match is found, otherwise return null
             return $result ? $result['id'] : null;
         } catch (PDOException $e) {
-            // Handle the exception (log, display an error, etc.)
-            // Example: log the error and rethrow the exception
             error_log("Error in isExist function: " . $e->getMessage());
             throw $e;
         }
