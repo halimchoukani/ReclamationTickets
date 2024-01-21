@@ -26,7 +26,12 @@ class CRUD
             return null;
         }
     }
-
+    function verifEmail($email)
+    {
+        $sql = "update account set status = 'Verifie' where email='$email';";
+        $res = $this->pdo->query($sql);
+        return $res->fetch(PDO::FETCH_NUM) == null ? false : true;
+    }
     function Register($nom, $prenom, $email, $tel, $mdp, $type, $matricule, $status, $gender, $noms, $tels, $adresse)
     {
         $soc = new Societe();

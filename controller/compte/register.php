@@ -22,10 +22,11 @@ if (isset($_POST["btn"])) {
             $_SESSION["error"] = "Mot de passe non identique";
         } else {
             $crud = new CRUD();
-            $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "null", $genre, $noms, $tel, $adresse);
+            $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tel, $adresse);
 
             if ($result == true) {
-                $_SESSION["error"] = "Compte créé avec succès!";
+
+                $_SESSION["error"] = "Compte créé avec succès ! Nous enverrons un email de confirmation dans les plus brefs délais";
             } else {
                 $_SESSION["error"] = "La création du compte a échoué. Veuillez vérifier vos informations.";
             }
