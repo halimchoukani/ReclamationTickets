@@ -60,12 +60,12 @@ class Crud_code
             $mail->isSMTP();
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'halimchoukani3@gmail.com';
-            $mail->Password   = 'sjnk dfmp hbqx ybzq'; // Use a secure method for storing this
+            $mail->Username   = 'zimysisetstage@gmail.com';
+            $mail->Password   = 'seyv ustt fqtw cqtq'; // Use a secure method for storing this
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Use ENCRYPTION_SMTPS for port 465
             $mail->Port       = 465; // Use 587 if you are using ENCRYPTION_STARTTLS
             $mail->SMTPDebug = 0;
-            $mail->setFrom('halimchoukani3@gmail.com', 'Zimys');
+            $mail->setFrom('zimysisetstage@gmail.com', 'Zimys');
             $mail->addAddress($email);
 
             $mail->isHTML(true);
