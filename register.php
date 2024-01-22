@@ -152,17 +152,16 @@ if (isset($_SESSION["email"])) {
                             </form>
                             <hr>
                             <div class="text-center">
-<<<<<<< HEAD
-                                <a class="small" href="../ReclamationTickets/forgot-password.php">Forgot Password?</a>
+                                <<<<<<< HEAD <a class="small" href="../ReclamationTickets/forgot-password.php">Forgot Password?</a>
                             </div>
                             <div class="text-center">
                                 <a class="small" href="../ReclamationTickets/login.php">Already have an account? Login!</a>
-=======
+                                =======
                                 <a href="forgot-password.php">Mot de passe oublié?</a>
                             </div>
                             <div class="text-center">
                                 <a href="login.php">Vous avez déjà un compte ? Login !</a>
->>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
+                                >>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
                             </div>
                         </div>
                     </div>

@@ -64,24 +64,13 @@ session_start();
                                         ' . $_SESSION["error"] . '
                                     </div>
                                 </div>';
-                                            unset($_SESSION["error"]);
-                                            unset($_SESSION["error-type"]);
-                                        }
-                                        ?>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." name="email">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="btn">
-                                            Reset Password
-                                        </button>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="register.php">Create an Account!</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="login.php">Already have an account? Login!</a>
-                                    </div>
+                                    unset($_SESSION["error"]);
+                                    unset($_SESSION["error-type"]);
+                                }
+                                ?>
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleInputEmail">Email</label>
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="hello@exemple.com" name="email">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block" name="btn">
                                     Envoyer le lien

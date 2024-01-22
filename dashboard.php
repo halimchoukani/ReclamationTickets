@@ -133,7 +133,7 @@
 							<span class="nav-text">Comptes </span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="gestComptesSA">Gestion Des Comptes</a></li>
+							<li><a href="gestComptesSA.php">Gestion Des Comptes</a></li>
 							<?php if ($_SESSION['type'] == "supervisor") {
 								echo "<li><a href='ajoutCompte.php'>Ajouter Un Compte</a></li>";
 							}
