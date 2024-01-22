@@ -72,7 +72,12 @@ class CRUD
 
         return $res;
     }
-
+    function getType($email)
+    {
+        $sql = "select type from account where email='$email';";
+        $res = $this->pdo->query($sql);
+        return $res->fetch(PDO::FETCH_NUM)[0];
+    }
     function compte_existe($email)
     {
         $sql = "select * from account where email='$email';";
@@ -101,7 +106,7 @@ class CRUD
     function Lister()
     {
 
-        $sql = "select *  from  account where type='$this->type';";
+        $sql = "select *  from  account where type != 'supervisor';";
         $res = $this->pdo->query($sql);
         return $res->fetchAll(PDO::FETCH_NUM);
     }

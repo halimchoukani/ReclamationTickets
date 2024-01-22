@@ -21,8 +21,29 @@ class CrudTicket
 
     public function getTickets()
     {
-        $req = "SELECT t.ticketid,t.demande,t.DateHeure,s.nom,t.Diagnostic,a.nom,t.Categorie,t.Priorite,t.Status FROM ticket t join account a on a.email = t.contact join societe s on s.id = a.centre
-        where (a.email = '{$_SESSION['email']}' and t.status = 'Cloture') or (t.status = 'enCours') ;";
+        $req = "SELECT 
+    t.ticketId, 
+    t.demande, 
+    t.DateHeure, 
+    s.nom AS societe_nom, 
+    t.Diagnostic, 
+    a.nom AS account_nom, 
+    t.Categorie, 
+    t.Priorite, 
+    t.Status,
+    c.cloture_par,
+    c.dateheur AS cloture_dateheur
+FROM 
+    ticket t
+JOIN 
+    account a ON a.email = t.contact
+JOIN 
+    societe s ON s.id = a.centre
+LEFT JOIN
+    cloture c ON c.ticket_id = t.ticketId
+WHERE 
+    (c.cloture_par = '{$_SESSION['email']}' AND t.Status = 'Cloture') OR (t.Status = 'enCours');
+";
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_NUM);
