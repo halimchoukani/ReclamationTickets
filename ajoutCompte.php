@@ -130,8 +130,8 @@ session_start();
 							<span class="nav-text">Dashboard</span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="index.html">Dashboard</a></li>
-							<li><a href="analytics.html">Analytics</a></li>
+							<li><a href="index.php">Dashboard</a></li>
+							<li><a href="analytics.php">Analytics</a></li>
 						</ul>
 					</li>
 					<li>
@@ -140,7 +140,7 @@ session_start();
 							<span class="nav-text">Comptes </span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="index.html">Gestion Des Comptes</a></li>
+							<li><a href="gestcomptessa.php">Gestion Des Comptes</a></li>
 							<?php if ($_SESSION['type'] == "supervisor") {
 								echo "<li><a href='analytics.html'>Ajouter Un Compte</a></li>";
 							}
