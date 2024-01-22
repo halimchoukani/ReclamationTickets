@@ -291,7 +291,7 @@ function setEventSidebar()
 		var demoTheme = jQuery(this).data('theme');
 		themeChange(demoTheme, 'ltr');
 		$('.dz-demo-panel').removeClass('show');
-		jQuery('.main-css').attr('href','css/style.css');
+		jQuery('.main-css').attr('href','assets/css/style.css');
 	});
 	
 	jQuery(document).on('click', '.dz_theme_demo_rtl', function(){
@@ -302,7 +302,7 @@ function setEventSidebar()
 		var demoTheme = jQuery(this).data('theme');
 		themeChange(demoTheme, 'rtl');
 		$('.dz-demo-panel').removeClass('show');
-		jQuery('.main-css').attr('href','css/style-rtl.css');
+		jQuery('.main-css').attr('href','assets/css/style-rtl.css');
 	});
 	
 	
@@ -310,13 +310,13 @@ function setEventSidebar()
 		direction = (direction != undefined) ? direction : 'ltr';
 
 		if(getCookie('direction') == 'rtl'){
-			jQuery('.main-css').attr('href','css/style-rtl.css');
+			jQuery('.main-css').attr('href','assets/css/style-rtl.css');
 		}
 
 		if(theme != undefined){
 			if(theme == 'rtl'){
 				themeChange(0, 'rtl');
-				jQuery('.main-css').attr('href','css/style-rtl.css');
+				jQuery('.main-css').attr('href','assets/css/style-rtl.css');
 			}else {
 				themeChange(theme, direction);
 			}

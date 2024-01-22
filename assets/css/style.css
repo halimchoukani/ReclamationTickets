@@ -64,7 +64,7 @@
 @import url("../icons/themify-icons/css/themify-icons.css");
 @import url("../icons/line-awesome/css/line-awesome.min.css");
 @import url("../icons/flaticon/flaticon.css");
-@import url(../vendor/metismenu/css/metisMenu.min.css);
+@import url(../../vendor/metismenu/css/metisMenu.min.css);
 :root {
   --primary: #222fb9;
   --secondary: #ff6175;
