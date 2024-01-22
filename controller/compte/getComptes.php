@@ -39,15 +39,25 @@ $comptes = $crud->lister();
             </div>
         </td>
         <td>' . $comptes[$i][2] . '</td>
-        <td>' . $comptes[$i][5] . '</td>
+        <td>';
+        if ($comptes[$i][5] == "client") {
+            echo $comptes[$i][9];
+        } else {
+            echo $comptes[$i][6];
+        }
+        echo '</td>
         <td>
             ' . $comptes[$i][5] . '
         </td>
-        <td>
-            <span class="badge light badge-danger">20 Juna , 2019</span>
-        </td>
-        <td>
-            <span class="badge badge-danger">Inactive</span>
+        <td>';
+        if ($comptes[$i][7] != "Verifie") {
+            echo '<span class="badge light badge-danger">' . $comptes[$i][7] . '</span>';
+        } else {
+            echo '<span class="badge light badge-success">' . $comptes[$i][7] . '</span>';
+        }
+        echo '</td>
+        <td>'
+             . $comptes[$i][3] . '
         </td>
         <td>
             <div class="d-flex">

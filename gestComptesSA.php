@@ -135,11 +135,13 @@ session_start();
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="index.html">Gestion Des Comptes</a></li>
-							<?php if ($_SESSION['type']=="admin"){} 
-							echo "<li><a href='analytics.html'>Ajouter Un Compte</a></li>";
+							<?php if ($_SESSION['type'] == "supervisor") {
+								echo "<li><a href='analytics.html'>Ajouter Un Compte</a></li>";
+							}
+
 							?>
 						</ul>
-						
+
 
 					</li>
 					<li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
@@ -156,17 +158,20 @@ session_start();
 			</div>
 		</div>
 
-	
+
 		<div class="content-body">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
 						<div class="card">
 							<div class="card-header flex-wrap">
-								<h4 class="card-title">LES COMPTES</h4><?php if ($_SESSION['type']=="admin"){} 
-							echo "<a href='add-customers.html' class='btn btn-primary me-3 mt-2 mt-sm-0'><i class='feather feather-user-plus'></i> Ajouter Compte</a>";
-							?>
-								
+								<h4 class="card-title">LES COMPTES</h4>
+								<?php if ($_SESSION['type'] == "supervisor") {
+									echo "<a href='add-customers.html' class='btn btn-primary me-3 mt-2 mt-sm-0'><i class='feather feather-user-plus'></i> Ajouter Compte</a>";
+								}
+
+								?>
+
 							</div>
 							<div class="card-body">
 								<div class="table-responsive ticket-table ">
