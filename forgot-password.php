@@ -78,10 +78,10 @@ session_start();
                             </form>
                             <hr>
                             <div class="text-center mb-2">
-                                <a href="register.html">Créer un compte !</a>
+                                <a href="register.php">Créer un compte !</a>
                             </div>
                             <div class="text-center mb-2">
-                                <a href="login.html">Vous avez déjà un compte ? Login !</a>
+                                <a href="login.php">Vous avez déjà un compte ? Login !</a>
                             </div>
                         </div>
                     </div>
@@ -94,15 +94,10 @@ session_start();
 
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/custom.min.js"></script>
+    <script src="assets/js/deznav-init.js"></script>
 
 
 
