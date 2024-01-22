@@ -1,55 +1,42 @@
-<?php
-session_start();
-if (!isset($_SESSION['email'])) {
-	header('location:index.php');
-} else {
-	if ($_SESSION['type'] != "supervisor" && $_SESSION['type'] != "admin") {
-		header('location:404.php');
-	}
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 
+<!-- Mirrored from tixia.dexignzone.com/xhtml/add-customers.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jan 2024 22:21:58 GMT -->
 <head>
-	<!-- Title -->
-	<title></title>
-
+   <!-- Title -->
+	<title>Tixia - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone</title>
+ 
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="DexignZone">
 	<meta name="robots" content="index, follow">
-
+   
 	<meta name="keywords" content="	admin dashboard, admin template, administration, analytics, bootstrap, bootstrap admin, coupon, deal, modern, responsive admin dashboard, ticket, ticket dashboard, ticket system, admin panel,	Ticketing admin, Dashboard template, Bootstrap HTML, Ticket management, Event ticketing, Responsive design, User-friendly interface, Efficiency, Streamlining operations, Event management, Ticket sales, Customizable template, Stylish design, Modern dashboard">
-	<meta name="description" content="Discover Zimys, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
-
-	<meta property="og:title" content="Zimys - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone">
-	<meta property="og:description" content="Discover Zimys, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
+	<meta name="description" content="Discover Tixia, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
+   
+	<meta property="og:title" content="Tixia - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone">
+	<meta property="og:description" content="Discover Tixia, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
 	<meta property="og:image" content="page-error-404.html">
 	<meta name="format-detection" content="telephone=no">
-
-	<meta name="twitter:title" content="Zimys - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone">
-	<meta name="twitter:description" content="Discover Zimys, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
+   
+	<meta name="twitter:title" content="Tixia - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone">
+	<meta name="twitter:description" content="Discover Tixia, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
 	<meta name="twitter:image" content="page-error-404.html">
 	<meta name="twitter:card" content="summary_large_image">
 
 	<!-- MOBILE SPECIFIC -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Favicon icon -->
-	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
-	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
-	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
 	<link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-	<link class="main-css" href="assets/css/style.css" rel="stylesheet">
+    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+   <link class="main-css" href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
-<body onload="update_type();setUpdate()">
-
-	<div id="preloader">
+<body><div id="preloader">
 		<div class="sk-three-bounce">
 			<div class="sk-child sk-bounce1"></div>
 			<div class="sk-child sk-bounce2"></div>
@@ -122,7 +109,13 @@ if (!isset($_SESSION['email'])) {
 				</nav>
 			</div>
 		</div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
 
+		<!--**********************************
+            Sidebar start
+        ***********************************-->
 		<div class="deznav">
 			<div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
@@ -141,9 +134,9 @@ if (!isset($_SESSION['email'])) {
 							<span class="nav-text">Comptes </span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="gestComptesSA">Gestion Des Comptes</a></li>
+							<li><a href="index.html">Gestion Des Comptes</a></li>
 							<?php if ($_SESSION['type'] == "supervisor") {
-								echo "<li><a href='ajoutCompte.php'>Ajouter Un Compte</a></li>";
+								echo "<li><a href='analytics.html'>Ajouter Un Compte</a></li>";
 							}
 
 							?>
@@ -163,100 +156,102 @@ if (!isset($_SESSION['email'])) {
 
 
 			</div>
-		</div>
+		</div>  
+       
 
-
-		<div class="content-body">
-			<div class="container-fluid">
+        <!--**********************************
+            Content body start
+        ***********************************-->
+		 <div class="content-body">
+            <div class="container-fluid">
+			 
+                <!-- row -->
 				<div class="row">
-					<div class="col-lg-12">
-						<div class="card">
-							<div class="card-header flex-wrap">
-								<h4 class="card-title">LES COMPTES</h4>
-								<?php if ($_SESSION['type'] == "supervisor") {
-									echo "<a href='ajoutCompte.php' class='btn btn-primary me-3 mt-2 mt-sm-0'><i class='feather feather-user-plus'></i> Ajouter Compte</a>";
-								}
-
-								?>
-
+					<div class="col-xl-12">
+						<div class="card  card-bx m-b30">
+							<div class="card-header bg-primary">
+								<h6 class="title text-white">Creer Compte</h6>
+								
 							</div>
-							<div class="card-body">
-								<div class="table-responsive ticket-table ">
-									<table id="example" class="display dataTablesCard table-responsive-xl" style="min-width: 845px" onfocus="setUpdate()">
-									</table>
+							<form class="profile-form">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">Nom</label>
+											<input type="text" name="firstName" class="form-control" placeholder="Enter First Name" required="">
+										</div>
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">Prenom</label>
+											<input type="text" name="lastName" class="form-control" placeholder="Enter Last Name" required="">
+										</div>
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">e-mail</label>
+											<input type="email" class="form-control" placeholder="Enter Email Address" required>
+										</div>
+										<div class="col-sm-6 mb-3">
+											<div class="form-group">
+												<label class=" form-label required">Mot De Passe</label>
+												<div class="position-relative">
+													<input type="password" id="dz-password" class="form-control" value="123456">
+													<span class="show-pass eye">
+														<i class="fa fa-eye-slash"></i>
+														<i class="fa fa-eye"></i>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">Sexe</label>
+											<select class="default-select wide form-control">
+												<option>Veuillez sélectionner</option>
+												<option>Homme</option>
+												<option>Femme</option>
+											</select>
+										</div>
+										
+										<div class="col-sm-6 mb-3">
+											<label class=" form-label required">Numéro de téléphone mobile</label>
+											<input type="number" class="form-control" placeholder="212-999-0000" required>
+										</div>
+										
+									</div>
 								</div>
-							</div>
+								<div class="card-footer justify-content-end">
+									<button class="btn btn-primary">Create Compte</button>
+								</div>
+							</form>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+				</div>	
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
 
 
-		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="modal-title fs-5" id="exampleModalLabel">Event Title</h1>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<div class="row">
-							<div class="col-xl-12">
-								<div class="mb-3">
-									<label for="exampleFormControlInput1" class="form-label">Event Name</label>
-									<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="The Story Of Danau Toba">
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="assets/js/update_type.js"></script>
-	<script>
-		function update_table() {
-			const xhttp = new XMLHttpRequest();
 
-			xhttp.onreadystatechange = function() {
-				if (this.readyState === 4 && this.status === 200) {
-					document.getElementById("example").innerHTML = this.responseText;
-					console.log("table updated");
-				} else if (this.readyState === 4 && this.status !== 200) {
-					console.error("Error occurred: " + this.status);
-				}
-			};
+      
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
 
-			xhttp.open("GET", "controller/compte/getComptes.php", true);
-			xhttp.send();
-		}
-		update_table();
-
-		function setUpdate() {
-			setInterval(update_table, 30000);
-		}
-	</script>
-	<script src="vendor/global/global.min.js"></script>
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="vendor/global/global.min.js"></script>
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-
 	<script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
 	<script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-
-	<!-- Apex Chart -->
-	<script src="vendor/apexchart/apexchart.js"></script>
-
-	<!-- Datatable -->
-	<script src="vendor/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="assets/js/plugins-init/datatables.init.js"></script>
-
-	<script src="assets/js/custom.min.js"></script>
+    <script src="assets/js/custom.min.js"></script>
 	<script src="assets/js/deznav-init.js"></script>
-
+	<script src="assets/js/demo.js"></script>
+    <script src="assets/js/styleSwitcher.js"></script>
+	
 </body>
 
+
+<!-- Mirrored from tixia.dexignzone.com/xhtml/add-customers.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jan 2024 22:21:58 GMT -->
 </html>
