@@ -1,26 +1,31 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 
 <!-- Mirrored from tixia.dexignzone.com/xhtml/add-customers.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jan 2024 22:21:58 GMT -->
+
 <head>
-   <!-- Title -->
-	<title>Tixia - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone</title>
- 
+	<!-- Title -->
+	<title>Ajouter Compte</title>
+
 	<!-- Meta -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="DexignZone">
 	<meta name="robots" content="index, follow">
-   
+
 	<meta name="keywords" content="	admin dashboard, admin template, administration, analytics, bootstrap, bootstrap admin, coupon, deal, modern, responsive admin dashboard, ticket, ticket dashboard, ticket system, admin panel,	Ticketing admin, Dashboard template, Bootstrap HTML, Ticket management, Event ticketing, Responsive design, User-friendly interface, Efficiency, Streamlining operations, Event management, Ticket sales, Customizable template, Stylish design, Modern dashboard">
 	<meta name="description" content="Discover Tixia, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
-   
+
 	<meta property="og:title" content="Tixia - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone">
 	<meta property="og:description" content="Discover Tixia, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
 	<meta property="og:image" content="page-error-404.html">
 	<meta name="format-detection" content="telephone=no">
-   
+
 	<meta name="twitter:title" content="Tixia - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone">
 	<meta name="twitter:description" content="Discover Tixia, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
 	<meta name="twitter:image" content="page-error-404.html">
@@ -28,15 +33,16 @@
 
 	<!-- MOBILE SPECIFIC -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
 	<link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-   <link class="main-css" href="assets/css/style.css" rel="stylesheet">
+	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
+	<link class="main-css" href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
-<body><div id="preloader">
+<body>
+	<div id="preloader">
 		<div class="sk-three-bounce">
 			<div class="sk-child sk-bounce1"></div>
 			<div class="sk-child sk-bounce2"></div>
@@ -109,7 +115,7 @@
 				</nav>
 			</div>
 		</div>
-        <!--**********************************
+		<!--**********************************
             Header end ti-comment-alt
         ***********************************-->
 
@@ -156,42 +162,42 @@
 
 
 			</div>
-		</div>  
-       
+		</div>
 
-        <!--**********************************
+
+		<!--**********************************
             Content body start
         ***********************************-->
-		 <div class="content-body">
-            <div class="container-fluid">
-			 
-                <!-- row -->
+		<div class="content-body">
+			<div class="container-fluid">
+
+				<!-- row -->
 				<div class="row">
 					<div class="col-xl-12">
 						<div class="card  card-bx m-b30">
 							<div class="card-header bg-primary">
 								<h6 class="title text-white">Creer Compte</h6>
-								
+
 							</div>
 							<form class="profile-form">
-                            <div class="card-body ">
-      
-                            <div class="mb-3 text-center">
-            <label class="form-label required">Type de Compte</label>
-        </div>
+								<div class="card-body ">
 
-      
-        <div class="mb-3 d-flex justify-content-center"> 
-            <div class="form-check form-check-inline mx-2">
-                <input class="form-check-input" type="radio" name="userType" id="adminRadio" value="admin" required>
-                <label class="form-check-label" for="adminRadio">Admin</label>
-            </div>
-            <div class="form-check form-check-inline mx-2">
-                <input class="form-check-input" type="radio" name="userType" id="clientRadio" value="client" required>
-                <label class="form-check-label" for="clientRadio">Client</label>
-            </div>
-        </div>
-       
+									<div class="mb-3 text-center">
+										<label class="form-label required">Type de Compte</label>
+									</div>
+
+
+									<div class="mb-3 d-flex justify-content-center">
+										<div class="form-check form-check-inline mx-2">
+											<input class="form-check-input" type="radio" name="userType" id="adminRadio" value="admin" required>
+											<label class="form-check-label" for="adminRadio">Admin</label>
+										</div>
+										<div class="form-check form-check-inline mx-2">
+											<input class="form-check-input" type="radio" name="userType" id="clientRadio" value="client" required>
+											<label class="form-check-label" for="clientRadio">Client</label>
+										</div>
+									</div>
+
 									<div class="row">
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">Nom</label>
@@ -225,81 +231,82 @@
 												<option>Femme</option>
 											</select>
 										</div>
-										
+
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">Numéro de téléphone mobile</label>
 											<input type="number" class="form-control" placeholder="212-999-0000" required>
 										</div>
-                                        <div class="mb-3 text-center" id="adminInput" style="display: none;">
-            <label class="form-label required">Matricule</label>
-            <input type="text" name="mat" class="form-control" placeholder="Entrer Votre Matricule">
-        </div>
-        <div class="mb-3 text-center" id="clientInput" style="display: none;">
-            <label class="form-label required">Selectionner Centre</label>
-            <select class="default-select wide form-control" name="centre">
-                <option>Selectioner votre  Societe</option> 
-            </select>
-        </div>
-										
+										<div class="mb-3 text-center" id="adminInput" style="display: none;">
+											<label class="form-label required">Matricule</label>
+											<input type="text" name="mat" class="form-control" placeholder="Entrer Votre Matricule">
+										</div>
+										<div class="mb-3 text-center" id="clientInput" style="display: none;">
+											<label class="form-label required">Selectionner Centre</label>
+											<select class="default-select wide form-control" name="centre">
+												<option>Selectioner votre Societe</option>
+											</select>
+										</div>
+
 									</div>
 								</div>
 								<div class="card-footer justify-content-end">
 									<button class="btn btn-primary">Create Compte</button>
 								</div>
-                                <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var adminRadio = document.getElementById('adminRadio');
-            var clientRadio = document.getElementById('clientRadio');
-            var adminInput = document.getElementById('adminInput');
+								<script>
+									document.addEventListener('DOMContentLoaded', function() {
+										var adminRadio = document.getElementById('adminRadio');
+										var clientRadio = document.getElementById('clientRadio');
+										var adminInput = document.getElementById('adminInput');
 
-            adminRadio.addEventListener('change', function () {
-                if (adminRadio.checked) {
-                    adminInput.style.display = 'block';
-                    clientInput.style.display = 'none';
-                }
-            });
+										adminRadio.addEventListener('change', function() {
+											if (adminRadio.checked) {
+												adminInput.style.display = 'block';
+												clientInput.style.display = 'none';
+											}
+										});
 
-            clientRadio.addEventListener('change', function () {
-                if (clientRadio.checked) {
-                    clientInput.style.display = 'block';
-                    adminInput.style.display = 'none';
-                }
-            });
-        });
-    </script>
+										clientRadio.addEventListener('change', function() {
+											if (clientRadio.checked) {
+												clientInput.style.display = 'block';
+												adminInput.style.display = 'none';
+											}
+										});
+									});
+								</script>
 							</form>
 						</div>
 					</div>
-				</div>	
-            </div>
-        </div>
-        <!--**********************************
+				</div>
+			</div>
+		</div>
+		<!--**********************************
             Content body end
         ***********************************-->
 
 
 
-      
-    </div>
-    <!--**********************************
+
+	</div>
+	<!--**********************************
         Main wrapper end
     ***********************************-->
 
-    <!--**********************************
+	<!--**********************************
         Scripts
     ***********************************-->
-    <!-- Required vendors -->
-    <script src="vendor/global/global.min.js"></script>
+	<!-- Required vendors -->
+	<script src="vendor/global/global.min.js"></script>
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 	<script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
 	<script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="assets/js/custom.min.js"></script>
+	<script src="assets/js/custom.min.js"></script>
 	<script src="assets/js/deznav-init.js"></script>
 	<script src="assets/js/demo.js"></script>
-    <script src="assets/js/styleSwitcher.js"></script>
-	
+	<script src="assets/js/styleSwitcher.js"></script>
+
 </body>
 
 
 <!-- Mirrored from tixia.dexignzone.com/xhtml/add-customers.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jan 2024 22:21:58 GMT -->
+
 </html>
