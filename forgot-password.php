@@ -8,7 +8,7 @@ session_start();
 
 <head>
     <!-- Title -->
-    <title>Tixia - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone</title>
+    <title>Mot de passe oublié</title>
 
     <!-- Meta -->
     <meta charset="utf-8">
@@ -50,7 +50,7 @@ session_start();
                     <div class="card mb-0 h-auto">
                         <div class="card-body">
                             <div class="text-center mb-3">
-                                <a href="index.html"><img class="logo-auth" src="assets/images/logo-full.png" alt=""></a>
+                                <a href="index.php"><img class="logo-auth" src="assets/images/logo-full.png" alt=""></a>
                             </div>
 
                             <div class="text-center mb-4">
@@ -73,7 +73,7 @@ session_start();
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="hello@exemple.com" name="email">
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block" name="btn">
-                                    Réinitialiser le mot de passe
+                                    Envoyer le lien
                                 </button>
                             </form>
                             <hr>
