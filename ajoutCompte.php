@@ -177,7 +177,7 @@
                             <div class="card-body ">
       
                             <div class="mb-3 text-center">
-            <label class="form-label required">User Type</label>
+            <label class="form-label required">Type de Compte</label>
         </div>
 
       
