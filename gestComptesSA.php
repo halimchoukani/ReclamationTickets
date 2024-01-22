@@ -131,7 +131,7 @@ if (!isset($_SESSION['email'])) {
 							<span class="nav-text">Dashboard</span>
 						</a>
 						<ul aria-expanded="false">
-							<li><a href="index.html">Dashboard</a></li>
+							<li><a href="dashboard.php">Dashboard</a></li>
 							<li><a href="analytics.html">Analytics</a></li>
 						</ul>
 					</li>
