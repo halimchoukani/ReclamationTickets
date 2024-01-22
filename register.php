@@ -32,7 +32,7 @@ if (isset($_SESSION["email"])) {
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form class="user" id="registerForm" method="post" action="/controller/compte/register.php">
+                            <form class="user" id="registerForm" method="post" action="../ReclamationTickets/controller/compte/register.php">
                                 <?php
                                 if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
                                     echo '<div class="card shadow mb-4">
@@ -102,10 +102,10 @@ if (isset($_SESSION["email"])) {
                             </form>
                             <hr>
                             <div class="text-center">
-                                <a class="small" href="forgot-password.php">Forgot Password?</a>
+                                <a class="small" href="../ReclamationTickets/forgot-password.php">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.php">Already have an account? Login!</a>
+                                <a class="small" href="../ReclamationTickets/login.php">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

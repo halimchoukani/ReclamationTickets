@@ -78,7 +78,7 @@ if ($_SESSION["email"] == null) {
       xhttp.onload = function() {
         document.getElementById("container").innerHTML = this.responseText;
       }
-      xhttp.open("GET", "/controller/ticket/gettickets.php");
+      xhttp.open("GET", "../ReclamationTickets/controller/ticket/gettickets.php");
       xhttp.send();
 
     }
