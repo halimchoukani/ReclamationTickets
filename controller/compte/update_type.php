@@ -7,3 +7,4 @@ if (isset($_SESSION["email"])) {
 } else {
     header('location:../../login.php');
 }
+echo $_SESSION['type'];

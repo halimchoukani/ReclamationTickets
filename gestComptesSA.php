@@ -174,7 +174,7 @@ if (!isset($_SESSION['email'])) {
 							<div class="card-header flex-wrap">
 								<h4 class="card-title">LES COMPTES</h4>
 								<?php if ($_SESSION['type'] == "supervisor") {
-									echo "<a href='ajoutCompte.php' class='btn btn-primary me-3 mt-2 mt-sm-0'><i class='feather feather-user-plus'></i> Ajouter Compte</a>";
+									echo "<a id='add' href='ajoutCompte.php' class='btn btn-primary me-3 mt-2 mt-sm-0'><i class='feather feather-user-plus'></i> Ajouter Compte</a>";
 								}
 
 								?>
