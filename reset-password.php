@@ -69,12 +69,36 @@ if (isset($_GET['token'])) {
                                         ' . $_SESSION["error"] . '
                                     </div>
                                 </div>';
+<<<<<<< HEAD
+                                            unset($_SESSION["error"]);
+                                            unset($_SESSION["error-type"]);
+                                        }
+                                        ?>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" aria-describedby="passwordHelp" placeholder="Enter Votre nouveau mot de passe" name="newpass">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control form-control-user" aria-describedby="passwordHelp" placeholder="Confirmer Votre nouveau mot de passe" name="cnewpass">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block" name="btn">
+                                            Reset Password
+                                        </button>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="register.php">Create an Account!</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="login.php">Already have an account? Login!</a>
+                                    </div>
+=======
                                     unset($_SESSION["error"]);
                                     unset($_SESSION["error-type"]);
                                 }
                                 ?>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-user" aria-describedby="passwordHelp" placeholder="Enter Votre nouveau mot de passe" name="newpass">
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-user" aria-describedby="passwordHelp" placeholder="Confirmer Votre nouveau mot de passe" name="cnewpass">

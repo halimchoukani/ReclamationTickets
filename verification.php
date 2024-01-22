@@ -49,7 +49,7 @@ if (isset($_GET['token'])) {
                 }
             };
 
-            xhttp.open("GET", "http://localhost:4000/controller/compte/verification.php?token=<?php echo $token; ?>", true);
+            xhttp.open("GET", "http://localhost:4000../ReclamationTickets/controller/compte/verification.php?token=<?php echo $token; ?>", true);
             xhttp.send();
         }
     </script>

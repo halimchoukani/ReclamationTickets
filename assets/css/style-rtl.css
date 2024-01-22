@@ -64,7 +64,11 @@
 @import url("../icons/themify-icons/css/themify-icons.css");
 @import url("../icons/line-awesome/css/line-awesome.min.css");
 @import url("../icons/flaticon/flaticon.css");
+<<<<<<< HEAD
+@import url(../vendor/metismenu/css/metisMenu.min.css);
+=======
 @import url(../../vendor/metismenu/css/metisMenu.min.css);
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
 :root {
   --primary: #222fb9;
   --secondary: #ff6175;
@@ -10327,7 +10331,11 @@ body > * {
   opacity: 0; }
 
 ::-webkit-scrollbar-thumb {
+<<<<<<< HEAD
+  background: silver; }
+=======
   background: #3B4CB8; }
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
 
 body ::-webkit-scrollbar-thumb {
   background: rgba(59, 76, 184, 0.1); }

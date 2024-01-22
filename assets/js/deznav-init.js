@@ -62,10 +62,17 @@ function getUrlParams(dParam)
 	});
 	if(direction == 'rtl' || body.attr('direction') == 'rtl'){
         direction = 'rtl';
+<<<<<<< HEAD
+			jQuery('.main-css').attr('href','css/style-rtl.css');
+		}else{
+			direction = 'ltr';
+			jQuery('.main-css').attr('href','css/style.css');
+=======
 			jQuery('.main-css').attr('href','assets/css/style-rtl.css');
 		}else{
 			direction = 'ltr';
 			jQuery('.main-css').attr('href','assets/css/style.css');
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
 		}
 	
 })(jQuery);

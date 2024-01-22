@@ -291,7 +291,11 @@ function setEventSidebar()
 		var demoTheme = jQuery(this).data('theme');
 		themeChange(demoTheme, 'ltr');
 		$('.dz-demo-panel').removeClass('show');
+<<<<<<< HEAD
+		jQuery('.main-css').attr('href','css/style.css');
+=======
 		jQuery('.main-css').attr('href','assets/css/style.css');
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
 	});
 	
 	jQuery(document).on('click', '.dz_theme_demo_rtl', function(){
@@ -302,7 +306,11 @@ function setEventSidebar()
 		var demoTheme = jQuery(this).data('theme');
 		themeChange(demoTheme, 'rtl');
 		$('.dz-demo-panel').removeClass('show');
+<<<<<<< HEAD
+		jQuery('.main-css').attr('href','css/style-rtl.css');
+=======
 		jQuery('.main-css').attr('href','assets/css/style-rtl.css');
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
 	});
 	
 	
@@ -310,13 +318,21 @@ function setEventSidebar()
 		direction = (direction != undefined) ? direction : 'ltr';
 
 		if(getCookie('direction') == 'rtl'){
+<<<<<<< HEAD
+			jQuery('.main-css').attr('href','css/style-rtl.css');
+=======
 			jQuery('.main-css').attr('href','assets/css/style-rtl.css');
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
 		}
 
 		if(theme != undefined){
 			if(theme == 'rtl'){
 				themeChange(0, 'rtl');
+<<<<<<< HEAD
+				jQuery('.main-css').attr('href','css/style-rtl.css');
+=======
 				jQuery('.main-css').attr('href','assets/css/style-rtl.css');
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
 			}else {
 				themeChange(theme, direction);
 			}

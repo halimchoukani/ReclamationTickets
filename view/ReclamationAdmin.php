@@ -51,7 +51,7 @@
             xhttp.onload = function() {
                 document.getElementById("container").innerHTML = this.responseText;
             }
-            xhttp.open("GET", "../controller/gettickets.php");
+            xhttp.open("GET", "..../ReclamationTickets/controller/gettickets.php");
             xhttp.send();
 
         }

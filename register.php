@@ -56,7 +56,7 @@ if (isset($_SESSION["email"])) {
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-5">Créer un compte !</h1>
                             </div>
-                            <form class="user" id="registerForm" method="post" action="/controller/compte/register.php">
+                            <form class="user" id="registerForm" method="post" action="../ReclamationTickets/controller/compte/register.php">
                                 <?php
                                 if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
                                     echo '<div class="card shadow mb-4">
@@ -152,10 +152,17 @@ if (isset($_SESSION["email"])) {
                             </form>
                             <hr>
                             <div class="text-center">
+<<<<<<< HEAD
+                                <a class="small" href="../ReclamationTickets/forgot-password.php">Forgot Password?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="../ReclamationTickets/login.php">Already have an account? Login!</a>
+=======
                                 <a href="forgot-password.php">Mot de passe oublié?</a>
                             </div>
                             <div class="text-center">
                                 <a href="login.php">Vous avez déjà un compte ? Login !</a>
+>>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
                             </div>
                         </div>
                     </div>
