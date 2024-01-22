@@ -174,19 +174,36 @@
 								
 							</div>
 							<form class="profile-form">
-								<div class="card-body">
+                            <div class="card-body ">
+      
+                            <div class="mb-3 text-center">
+            <label class="form-label required">Type de Compte</label>
+        </div>
+
+      
+        <div class="mb-3 d-flex justify-content-center"> 
+            <div class="form-check form-check-inline mx-2">
+                <input class="form-check-input" type="radio" name="userType" id="adminRadio" value="admin" required>
+                <label class="form-check-label" for="adminRadio">Admin</label>
+            </div>
+            <div class="form-check form-check-inline mx-2">
+                <input class="form-check-input" type="radio" name="userType" id="clientRadio" value="client" required>
+                <label class="form-check-label" for="clientRadio">Client</label>
+            </div>
+        </div>
+       
 									<div class="row">
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">Nom</label>
-											<input type="text" name="firstName" class="form-control" placeholder="Enter First Name" required="">
+											<input type="text" name="firstName" class="form-control" placeholder="Entrer le nom" required="">
 										</div>
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">Prenom</label>
-											<input type="text" name="lastName" class="form-control" placeholder="Enter Last Name" required="">
+											<input type="text" name="lastName" class="form-control" placeholder="Entrer le prénom" required="">
 										</div>
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">e-mail</label>
-											<input type="email" class="form-control" placeholder="Enter Email Address" required>
+											<input type="email" class="form-control" placeholder="Exemple@gmail.com" required>
 										</div>
 										<div class="col-sm-6 mb-3">
 											<div class="form-group">
@@ -213,12 +230,43 @@
 											<label class=" form-label required">Numéro de téléphone mobile</label>
 											<input type="number" class="form-control" placeholder="212-999-0000" required>
 										</div>
+                                        <div class="mb-3 text-center" id="adminInput" style="display: none;">
+            <label class="form-label required">Matricule</label>
+            <input type="text" name="mat" class="form-control" placeholder="Entrer Votre Matricule">
+        </div>
+        <div class="mb-3 text-center" id="clientInput" style="display: none;">
+            <label class="form-label required">Selectionner Centre</label>
+            <select class="default-select wide form-control" name="centre">
+                <option>Selectioner votre  Societe</option> 
+            </select>
+        </div>
 										
 									</div>
 								</div>
 								<div class="card-footer justify-content-end">
 									<button class="btn btn-primary">Create Compte</button>
 								</div>
+                                <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var adminRadio = document.getElementById('adminRadio');
+            var clientRadio = document.getElementById('clientRadio');
+            var adminInput = document.getElementById('adminInput');
+
+            adminRadio.addEventListener('change', function () {
+                if (adminRadio.checked) {
+                    adminInput.style.display = 'block';
+                    clientInput.style.display = 'none';
+                }
+            });
+
+            clientRadio.addEventListener('change', function () {
+                if (clientRadio.checked) {
+                    clientInput.style.display = 'block';
+                    adminInput.style.display = 'none';
+                }
+            });
+        });
+    </script>
 							</form>
 						</div>
 					</div>
