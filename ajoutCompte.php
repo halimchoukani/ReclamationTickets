@@ -179,7 +179,7 @@ session_start();
 								<h6 class="title text-white">Creer Compte</h6>
 
 							</div>
-							<form class="profile-form">
+							<form class="profile-form" method="post" action="/controller/compte/register.php">
 								<div class="card-body ">
 
 									<div class="mb-3 text-center">
@@ -201,92 +201,126 @@ session_start();
 									<div class="row">
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">Nom</label>
-											<input type="text" name="firstName" class="form-control" placeholder="Entrer le nom" required="">
+											<input type="text" name="nom" class="form-control" placeholder="Entrer le nom" required="">
 										</div>
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">Prenom</label>
-											<input type="text" name="lastName" class="form-control" placeholder="Entrer le prénom" required="">
+											<input type="text" name="prenom" class="form-control" placeholder="Entrer le prénom" required="">
 										</div>
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">e-mail</label>
-											<input type="email" class="form-control" placeholder="Exemple@gmail.com" required>
+											<input type="email" class="form-control" name="email" placeholder="Exemple@gmail.com" required>
 										</div>
 										<div class="col-sm-6 mb-3">
 											<div class="form-group">
 												<label class=" form-label required">Mot De Passe</label>
 												<div class="position-relative">
-													<input type="password" id="dz-password" class="form-control" value="123456">
+													<input type="password" name="mdp" id="dz-password" class="form-control" value="123456">
 													<span class="show-pass eye">
 														<i class="fa fa-eye-slash"></i>
 														<i class="fa fa-eye"></i>
 													</span>
 												</div>
 											</div>
+
+										</div>
+
+										<div class="col-sm-6 mb-3">
+											<label class="form-label required">Type de Compte</label>
+
+
+
+											<div class="mb-3 d-flex ">
+												<div class="form-check form-check-inline mx-2">
+													<input class="form-check-input" type="radio" name="flexRadioDefault" id="adminRadio" value="admin" required>
+													<label class="form-check-label" for="adminRadio">Homme</label>
+												</div>
+												<div class="form-check form-check-inline mx-2">
+													<input class="form-check-input" type="radio" name="flexRadioDefault" id="clientRadio" value="client" required>
+													<label class="form-check-label" for="clientRadio">Femme</label>
+												</div>
+											</div>
 										</div>
 										<div class="col-sm-6 mb-3">
-											<label class=" form-label required">Sexe</label>
-											<select class="default-select wide form-control">
-												<option>Veuillez sélectionner</option>
-												<option>Homme</option>
-												<option>Femme</option>
-											</select>
+											<div class="form-group">
+												<label class=" form-label required">Confirmer Votre Mot De Passe</label>
+												<div class="position-relative">
+													<input type="password" name="cmdp" id="dz-password" class="form-control" value="123456">
+													<span class="show-pass eye">
+														<i class="fa fa-eye-slash"></i>
+														<i class="fa fa-eye"></i>
+													</span>
+												</div>
+											</div>
+
 										</div>
 
 										<div class="col-sm-6 mb-3">
 											<label class=" form-label required">Numéro de téléphone mobile</label>
-											<input type="number" class="form-control" placeholder="212-999-0000" required>
+											<input type="number" name="tel" class="form-control" placeholder="212-999-0000" required>
 										</div>
-										<div class="mb-3 text-center" id="adminInput" style="display: none;">
+										<div class="col-sm-6 mb-3" id="adminInput" style="display: none;">
 											<label class="form-label required">Matricule</label>
 											<input type="text" name="mat" class="form-control" placeholder="Entrer Votre Matricule">
 										</div>
-										<div class="mb-3 text-center" id="clientInput" style="display: none;">
-											<label class="form-label required">Selectionner Centre</label>
-											<select class="default-select wide form-control" name="centre">
-												<option>Selectioner votre Societe</option>
-											</select>
-										</div>
+										<div class="col-sm-6 mb-3" id="clientInput" style="display: none;">
+											<label class="form-label required"> Centre</label>
+											<input type="text" name="noms" class="form-control" placeholder="" required>
 
+											<div class="col-sm-6 mb-3">
+												<label class="form-label required">Numéro de téléphone </label>
+												<input type="number" name="nums" class="form-control" placeholder="212-999-0000" required>
+											</div>
+											<div class="col-sm-6 mb-3">
+												<label class="form-label required">Adresse</label>
+												<input type="text" name="adresse" class="form-control" placeholder="" required>
+											</div>
+										</div>
 									</div>
 								</div>
-								<div class="card-footer justify-content-end">
-									<button class="btn btn-primary">Create Compte</button>
-								</div>
-								<script>
-									document.addEventListener('DOMContentLoaded', function() {
-										var adminRadio = document.getElementById('adminRadio');
-										var clientRadio = document.getElementById('clientRadio');
-										var adminInput = document.getElementById('adminInput');
 
-										adminRadio.addEventListener('change', function() {
-											if (adminRadio.checked) {
-												adminInput.style.display = 'block';
-												clientInput.style.display = 'none';
-											}
-										});
-
-										clientRadio.addEventListener('change', function() {
-											if (clientRadio.checked) {
-												clientInput.style.display = 'block';
-												adminInput.style.display = 'none';
-											}
-										});
-									});
-								</script>
-							</form>
 						</div>
 					</div>
+					<div class="card-footer justify-content-end">
+						<button class="btn btn-primary">Create Compte</button>
+					</div>
+					<script>
+						document.addEventListener('DOMContentLoaded', function() {
+							var adminRadio = document.getElementById('adminRadio');
+							var clientRadio = document.getElementById('clientRadio');
+							var adminInput = document.getElementById('adminInput');
+
+							adminRadio.addEventListener('change', function() {
+								if (adminRadio.checked) {
+									adminInput.style.display = 'block';
+									clientInput.style.display = 'none';
+								}
+							});
+
+							clientRadio.addEventListener('change', function() {
+								if (clientRadio.checked) {
+									clientInput.style.display = 'block';
+									adminInput.style.display = 'none';
+								}
+							});
+						});
+					</script>
+					</form>
 				</div>
 			</div>
 		</div>
-		<!--**********************************
+	</div>
+
+
+
+
+	<!--**********************************
             Content body end
         ***********************************-->
 
 
 
 
-	</div>
 	<!--**********************************
         Main wrapper end
     ***********************************-->
