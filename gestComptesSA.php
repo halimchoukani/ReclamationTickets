@@ -1,5 +1,12 @@
 <?php
 session_start();
+if (!isset($_SESSION['email'])) {
+	header('location:index.php');
+} else {
+	if ($_SESSION['type'] != "supervisor" && $_SESSION['type'] != "admin") {
+		header('location:404.php');
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +47,7 @@ session_start();
 
 </head>
 
-<body>
+<body onload="update_type();setUpdate()">
 
 	<div id="preloader">
 		<div class="sk-three-bounce">
@@ -175,9 +182,7 @@ session_start();
 							</div>
 							<div class="card-body">
 								<div class="table-responsive ticket-table ">
-									<table id="example" class="display dataTablesCard table-responsive-xl" style="min-width: 845px">
-
-
+									<table id="example" class="display dataTablesCard table-responsive-xl" style="min-width: 845px" onfocus="setUpdate()">
 									</table>
 								</div>
 							</div>
@@ -213,19 +218,28 @@ session_start();
 			</div>
 		</div>
 	</div>
+	<script src="assets/js/update_type.js"></script>
 	<script>
-		const xhttp = new XMLHttpRequest();
+		function update_table() {
+			const xhttp = new XMLHttpRequest();
 
-		xhttp.onreadystatechange = function() {
-			if (this.readyState === 4 && this.status === 200) {
-				document.getElementById("example").innerHTML = this.responseText;
-			} else if (this.readyState === 4 && this.status !== 200) {
-				console.error("Error occurred: " + this.status);
-			}
-		};
+			xhttp.onreadystatechange = function() {
+				if (this.readyState === 4 && this.status === 200) {
+					document.getElementById("example").innerHTML = this.responseText;
+					console.log("table updated");
+				} else if (this.readyState === 4 && this.status !== 200) {
+					console.error("Error occurred: " + this.status);
+				}
+			};
 
-		xhttp.open("GET", "controller/compte/getComptes.php", true);
-		xhttp.send();
+			xhttp.open("GET", "controller/compte/getComptes.php", true);
+			xhttp.send();
+		}
+		update_table();
+
+		function setUpdate() {
+			setInterval(update_table, 30000);
+		}
 	</script>
 	<script src="vendor/global/global.min.js"></script>
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
@@ -242,8 +256,6 @@ session_start();
 
 	<script src="assets/js/custom.min.js"></script>
 	<script src="assets/js/deznav-init.js"></script>
-	<script src="assets/js/demo.js"></script>
-	<script src="assets/js/styleSwitcher.js"></script>
 
 </body>
 
