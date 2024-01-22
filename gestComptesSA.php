@@ -3,10 +3,10 @@
 
 
 .<head>
-   <!-- Title -->
+
 	<title></title>
  
-	<!-- Meta -->
+	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="author" content="DexignZone">
@@ -25,9 +25,8 @@
 	<meta name="twitter:image" content="page-error-404.html">
 	<meta name="twitter:card" content="summary_large_image">
 
-	<!-- MOBILE SPECIFIC -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon icon -->
+  
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
 	<link href="vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
@@ -37,9 +36,6 @@
 </head>
 <body>
 
-    <!--*******************
-        Preloader start
-    ********************-->
     <div id="preloader">
         <div class="sk-three-bounce">
             <div class="sk-child sk-bounce1"></div>
@@ -47,18 +43,10 @@
             <div class="sk-child sk-bounce3"></div>
         </div>
     </div>
-    <!--*******************
-        Preloader end
-    ********************-->
-
-    <!--**********************************
-        Main wrapper start
-    ***********************************-->
+   
     <div id="main-wrapper">
 
-        <!--**********************************
-            Nav header start
-        ***********************************-->
+       
         <div class="nav-header">
     <div class="brand-logo">
         <img src="assets/images/logo.png" alt="Logo" class="brand-logo">
@@ -70,15 +58,6 @@
         </div>
     </div>
 </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
-		
-
-		
-		<!--**********************************
-            Header start
-        ***********************************-->
         <div class="header">
             <div class="header-content">
                 <nav class="navbar navbar-expand">
@@ -106,7 +85,7 @@
 							
                                 <li class="nav-item dropdown header-profile">
                                     <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
-                                        <img src="images/profile/pic1.jpg" width="20" alt="">
+                                        <img src="assets/images/profile/male.jpg" width="20" alt="">
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-end">
                                         <a href="app-profile.html" class="dropdown-item ai-icon">
@@ -114,7 +93,7 @@
                                             <span class="ms-2">Profile </span>
                                         </a>
                                         
-                                        <a href="page-login.html" class="dropdown-item ai-icon">
+                                        <a href="deconnexion.php" class="dropdown-item ai-icon">
                                             <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
                                             <span class="ms-2">Logout </span>
                                         </a>
@@ -126,13 +105,7 @@
                 </nav>
             </div>
         </div>
-        <!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
-
-		<!--**********************************
-            Sidebar start
-        ***********************************-->
+      
 		<div class="deznav">
             <div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
@@ -162,99 +135,11 @@
                    
 			</div>
         </div>
-        <!--**********************************
-            Sidebar end
-        ***********************************-->
+    
 		
-		<!--**********************************
-            EventList
-        ***********************************-->
-		
-			<div class="event-sidebar dz-scroll" id="eventSidebar">
-			<div class="card shadow-none rounded-0 bg-transparent h-auto mb-0">
-				<div class="card-body text-center event-calender pb-2">
-					<input type='text' class="form-control d-none" id='datetimepicker1'>
-				</div>
-			</div>
-			<div class="card shadow-none rounded-0 bg-transparent h-auto">
-				<div class="card-header border-0 pb-0">
-					<h4 class="text-black">Upcoming Events</h4>
-				</div>
-				<div class="card-body">
-					<div class="media mb-5 align-items-center event-list">
-						<div class="p-3 text-center rounded me-3 date-bx bgl-primary">
-							<h2 class="mb-0 text-black">3</h2>
-							<h5 class="mb-1 text-black">Wed</h5>
-						</div>
-						<div class="media-body px-0">
-							<h6 class="mt-0 mb-3 fs-14"><a class="text-black" href="events.html">Live Concert Choir Charity Event 2020</a></h6>
-							<ul class="fs-14 list-inline mb-2 d-flex justify-content-between">
-								<li>Ticket Sold</li>
-								<li>561/650</li>
-							</ul>
-							<div class="progress mb-0" style="height:4px; width:100%;">
-								<div class="progress-bar bg-warning progress-animated" style="width:85%; height:100%;" role="progressbar">
-									<span class="sr-only">60% Complete</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="media mb-5 align-items-center event-list">
-						<div class="p-3 text-center rounded me-3 date-bx bgl-primary">
-							<h2 class="mb-0 text-black">16</h2>
-							<h5 class="mb-1 text-black">Tue</h5>
-						</div>
-						<div class="media-body px-0">
-							<h6 class="mt-0 mb-3 fs-14"><a class="text-black" href="events.html">Beautiful Fireworks Show In The New Year Night</a></h6>
-							<ul class="fs-14 list-inline mb-2 d-flex justify-content-between">
-								<li>Ticket Sold</li>
-								<li>431/650</li>
-							</ul>
-							<div class="progress mb-0" style="height:4px; width:100%;">
-								<div class="progress-bar bg-warning progress-animated" style="width:50%; height:100%;" role="progressbar">
-									<span class="sr-only">60% Complete</span>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="media mb-0 align-items-center event-list">
-						<div class="p-3 text-center rounded me-3 date-bx bgl-success">
-							<h2 class="mb-0 text-black">28</h2>
-							<h5 class="mb-1 text-black">Fri</h5>
-						</div>
-						<div class="media-body px-0">
-							<h6 class="mt-0 mb-3 fs-14"><a class="text-black" href="events.html">The Story Of Danau Toba (Musical Drama)</a></h6>
-							<ul class="fs-14 list-inline mb-2 d-flex justify-content-between">
-								<li>Ticket Sold</li>
-								<li>650/650</li>
-							</ul>
-							<div class="progress mb-0" style="height:4px; width:100%;">
-								<div class="progress-bar bg-success progress-animated" style="width:100%; height:100%;" role="progressbar">
-									<span class="sr-only">60% Complete</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="card-footer justify-content-between border-0 d-flex fs-14">
-					<span>5 events more</span>
-					<a href="events.html" class="text-primary">View more <i class="las la-long-arrow-alt-right scale5 ms-2"></i></a>
-				</div>
-			</div>
-			<div class="card shadow-none rounded-0 bg-transparent h-auto mb-0">
-				<div class="card-body text-center event-calender">
-					<a href="javascript:void(0);" class="btn btn-primary btn-rounded btn shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">
-						+ New Event
-					</a>
-				</div>
-			</div>
-		</div>
-		
-		<!--**********************************  
-            Content body start
-        ***********************************-->
+	
         <div class="content-body">
-            <!-- row -->
+    
 			<div class="container-fluid">
                 <
                 <div class="row">
@@ -278,9 +163,9 @@
                                             <th>Nom & Prenom</th>
 										<th>e-mail</th>
 										<th>Centre/Matricule</th>
-										<th>Type</th>
-										<th>Status</th>
 										<th>Telephone</th>
+										<th>Status</th>
+										<th>Type</th>
 										<th>Action</th>
 												
 											</tr>
@@ -364,9 +249,7 @@
 				</div>
             </div>
         </div>
-        <!--**********************************
-            Content body end
-        ***********************************-->
+     
 
        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -393,21 +276,6 @@
 		</div>
 	</div>
 
-        <!--**********************************
-            Footer start
-        ***********************************-->
-      
-        <!--**********************************
-            Footer end
-        ***********************************-->
-
-		<!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-        <!--**********************************
-           Support ticket button end
-        ***********************************-->
 
 
     </div>
