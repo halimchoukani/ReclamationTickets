@@ -47,7 +47,6 @@ if (isset($_SESSION["email"])) {
 
             <div class="row justify-content-center">
 
-<<<<<<< HEAD
                 <div class="card o-hidden border-0 shadow-lg my-5">
                     <div class="card-body p-0">
                         <div class="row">
@@ -61,27 +60,10 @@ if (isset($_SESSION["email"])) {
                                         <?php
                                         if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
                                             echo '<div class="card shadow mb-4">
-=======
-                <div class="col-lg-5 col-md-6">
-                    <div class="card mb-0 h-auto">
-                        <div class="card-body">
-                            <div class="text-center mb-3">
-                                <a href="index.html"><img class="logo-auth" src="assets/images/logo-full.png" alt=""></a>
-                            </div>
-
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Login</h1>
-                            </div>
-                            <form class="user" action="/controller/compte/login.php" method="post">
-                                <?php
-                                if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
-                                    echo '<div class="card shadow mb-4">
->>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
                                     <div class="card-body ' . $_SESSION["error-type"] . '" id="card">
                                         ' . $_SESSION["error"] . '
                                     </div>
                                 </div>';
-<<<<<<< HEAD
                                             unset($_SESSION["error"]);
                                             unset($_SESSION["error-type"]);
                                         }
@@ -109,25 +91,6 @@ if (isset($_SESSION["email"])) {
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="../ReclamationTickets/register.php">Create an Account!</a>
-=======
-                                    unset($_SESSION["error"]);
-                                    unset($_SESSION["error-type"]);
-                                }
-                                ?>
-                                <div class="form-group mb-4">
-                                    <label class="form-label" for="exampleInputEmail">Email</label>
-                                    <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="exemple@exemple.com">
-                                </div>
-                                <div class="form-group mb-3 mb-sm-4">
-                                    <label class="form-label" for="exampleInputPassword">Password</label>
-
-                                    <div class="position-relative">
-                                        <input type="password" name="mdp" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                                        <span id="eye" class="show-pass eye">
-                                            <i class="fa fa-eye-slash"></i>
-                                            <i class="fa fa-eye"></i>
-                                        </span>
->>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
                                     </div>
                                 </div>
                                 <div class="form-row d-flex flex-wrap justify-content-between align-items-baseline mb-2">

@@ -64,7 +64,6 @@ session_start();
                                         ' . $_SESSION["error"] . '
                                     </div>
                                 </div>';
-<<<<<<< HEAD
                                             unset($_SESSION["error"]);
                                             unset($_SESSION["error-type"]);
                                         }
@@ -83,15 +82,6 @@ session_start();
                                     <div class="text-center">
                                         <a class="small" href="login.php">Already have an account? Login!</a>
                                     </div>
-=======
-                                    unset($_SESSION["error"]);
-                                    unset($_SESSION["error-type"]);
-                                }
-                                ?>
-                                <div class="form-group">
-                                    <label class="form-label" for="exampleInputEmail">Email</label>
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="hello@exemple.com" name="email">
->>>>>>> 3f03f53fd33aeb75a613acabae1ae892855f65fa
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block" name="btn">
                                     Envoyer le lien
