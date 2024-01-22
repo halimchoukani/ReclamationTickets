@@ -78,7 +78,7 @@ if (isset($_SESSION["email"])) {
 
                                     <div class="position-relative">
                                         <input type="password" name="mdp" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
-                                        <span class="show-pass eye">
+                                        <span id="eye" class="show-pass eye">
                                             <i class="fa fa-eye-slash"></i>
                                             <i class="fa fa-eye"></i>
                                         </span>
@@ -116,7 +116,20 @@ if (isset($_SESSION["email"])) {
     <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
     <script src="assets/js/custom.min.js"></script>
     <script src="assets/js/deznav-init.js"></script>
+    <script>
+        $(document).ready(function() {
+            var eyeElement = $("#eye");
+            var passwordInput = $("#exampleInputPassword");
 
+            eyeElement.click(function() {
+                if (eyeElement.hasClass("show-pass") && eyeElement.hasClass("eye") && eyeElement.hasClass("active")) {
+                    passwordInput.attr("type", "text");
+                } else {
+                    passwordInput.attr("type", "password");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
