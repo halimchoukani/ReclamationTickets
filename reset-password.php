@@ -97,16 +97,24 @@ if (isset($_GET['token'])) {
         </div>
 
     </div>
+    <script src="vendor/global/global.min.js"></script>
+    <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="assets/js/custom.min.js"></script>
+    <script src="assets/js/deznav-init.js"></script>
+    <script>
+        $(document).ready(function() {
+            var eyeElement = $("#eye");
+            var passwordInput = $("#exampleInputPassword");
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="assets/js/sb-admin-2.min.js"></script>
+            eyeElement.click(function() {
+                if (eyeElement.hasClass("show-pass") && eyeElement.hasClass("eye") && eyeElement.hasClass("active")) {
+                    passwordInput.attr("type", "text");
+                } else {
+                    passwordInput.attr("type", "password");
+                }
+            });
+        });
+    </script>
 
 
 

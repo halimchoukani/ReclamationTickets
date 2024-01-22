@@ -70,54 +70,80 @@ if (isset($_SESSION["email"])) {
                                 ?>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
+                                        <label class="form-label" for="exampleFirstName">Prenom</label>
                                         <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Prenom" name="prenom">
                                     </div>
                                     <div class="col-sm-6">
+                                        <label class="form-label" for="exampleLastName">Nom</label>
                                         <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Nom" name="nom">
                                     </div>
                                 </div>
+
                                 <div class="form-group row">
-                                    <div class="form-check col-sm-6">
-                                        <input class="form-check-input" value="male" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Male
-                                        </label>
-                                    </div>
-                                    <div class="form-check col-sm-6">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value="female" id="flexRadioDefault2">
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            Female
-                                        </label>
+                                    <div class="col-sm-6">
+                                        <div class="position-relative">
+                                            <input class="form-check-input" value="male" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                Male
+                                            </label>
+                                        </div>
                                     </div>
 
+                                    <div class="col-sm-6">
+                                        <div class="position-relative">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault" value="female" id="flexRadioDefault2">
+                                            <label class="form-check-label" for="flexRadioDefault2">
+                                                Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="form-group mb-4">
+                                    <label class="form-label" for="exampleInputEmail">Adresse mail</label>
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="hello@exemple.com" name="email">
                                 </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Email Address" name="email">
-                                </div>
-                                <div class="form-group">
+                                <div class="form-group mb-4">
+                                    <label class="form-label" for="exampleInputTel">Num Telephone</label>
                                     <input type="tel" class="form-control form-control-user" id="exampleInputTel" placeholder="Numero de Telephone" name="tel">
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="form-group mb-4">
+                                    <label class="form-label" for="exampleInputTel">Mot de passe</label>
+                                    <div class="position-relative">
                                         <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" name="mdp">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" name="cmdp">
+                                        <span id="eye" class="show-pass eye">
+                                            <i class="fa fa-eye-slash"></i>
+                                            <i class="fa fa-eye"></i>
+                                        </span>
                                     </div>
                                 </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleInputNomS" placeholder="Nom de Societe ou bien Center" name="noms">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="tel" class="form-control form-control-user" id="exampleInputNumS" placeholder="Num de telephone de Societe ou bien Center" name="nums">
+                                <div class="form-group mb-4">
+                                    <label class="form-label" for="exampleInputTel">Confirmer le mot de passe</label>
+                                    <div class="position-relative">
+                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat Password" name="cmdp">
+                                        <span id="eye2" class="show-pass eye">
+                                            <i class="fa fa-eye-slash"></i>
+                                            <i class="fa fa-eye"></i>
+                                        </span>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="">
-                                        <input type="text" name="adresse" class="form-control form-control-user" id="exampleTextArea" placeholder="Adresse de la Societe">
-                                    </div>
+
+                                    <label class="form-label" for="exampleInputNomS">Num telephone de l'entreprise</label>
+                                    <input type="tel" class="form-control form-control-user" id="exampleInputNumS" placeholder="Numéro de téléphone de l'entreprise ou bien Center" name="nums">
+
+                                </div>
+                                <div class="form-group">
+
+                                    <label class="form-label" for="exampleInputNomS">Nom de l'entreprise</label>
+                                    <input type="text" class="form-control form-control-user" id="exampleInputNomS" placeholder="nom de la société" name="noms">
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="exampleTextArea">Adresse de l'entreprise
+                                    </label>
+                                    <input type="text" name="adresse" class="form-control form-control-user" id="exampleTextArea" placeholder="Adresse de la Societe">
+
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block" name="btn">
                                     S'inscrire
@@ -144,13 +170,21 @@ if (isset($_SESSION["email"])) {
     <script>
         $(document).ready(function() {
             var eyeElement = $("#eye");
+            var eyeElement2 = $("#eye2");
             var passwordInput = $("#exampleInputPassword");
-
+            var passwordInput2 = $("#exampleRepeatPassword");
             eyeElement.click(function() {
                 if (eyeElement.hasClass("show-pass") && eyeElement.hasClass("eye") && eyeElement.hasClass("active")) {
                     passwordInput.attr("type", "text");
                 } else {
                     passwordInput.attr("type", "password");
+                }
+            });
+            eyeElement2.click(function() {
+                if (eyeElement2.hasClass("show-pass") && eyeElement2.hasClass("eye") && eyeElement2.hasClass("active")) {
+                    passwordInput2.attr("type", "text");
+                } else {
+                    passwordInput2.attr("type", "password");
                 }
             });
         });
