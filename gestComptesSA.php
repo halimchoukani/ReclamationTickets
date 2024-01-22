@@ -236,12 +236,7 @@
 				</div>
 			</div>
 		</div>
-
-		<!--**********************************  
-            Content body start
-        ***********************************-->
 		<div class="content-body">
-
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
