@@ -10,6 +10,7 @@ if (isset($_POST['btn'])) {
     if ($result != null) {
         $_SESSION['email'] = $email;
         $_SESSION['type'] = $result[5];
+        $_SESSION['gender'] = $result[8];
 
         header('location:../../index.php');
     } else {
