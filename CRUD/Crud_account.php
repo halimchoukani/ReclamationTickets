@@ -101,7 +101,7 @@ class CRUD
     function Lister()
     {
 
-        $sql = "select *  from  account where type='$this->type';";
+        $sql = "select *  from  account;";
         $res = $this->pdo->query($sql);
         return $res->fetchAll(PDO::FETCH_NUM);
     }

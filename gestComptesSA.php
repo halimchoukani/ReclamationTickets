@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 ?>
 
 <!DOCTYPE html>
@@ -116,13 +115,7 @@ session_start();
 				</nav>
 			</div>
 		</div>
-		<!--**********************************
-            Header end ti-comment-alt
-        ***********************************-->
 
-		<!--**********************************
-            Sidebar start
-        ***********************************-->
 		<div class="deznav">
 			<div class="deznav-scroll">
 				<ul class="metismenu" id="menu">
@@ -152,13 +145,6 @@ session_start();
 
 			</div>
 		</div>
-		<!--**********************************
-            Sidebar end
-        ***********************************-->
-
-		<!--**********************************
-            EventList
-        ***********************************-->
 
 		<div class="event-sidebar dz-scroll" id="eventSidebar">
 			<div class="card shadow-none rounded-0 bg-transparent h-auto mb-0">
@@ -251,94 +237,7 @@ session_start();
 							<div class="card-body">
 								<div class="table-responsive ticket-table ">
 									<table id="example" class="display dataTablesCard table-responsive-xl" style="min-width: 845px">
-										<thead>
-											<tr>
-												<th>
-													<div class="form-check custom-checkbox ms-2">
-														<input type="checkbox" class="form-check-input" id="checkAll" required="">
-														<label class="form-check-label" for="checkAll"></label>
-													</div>
-												</th>
-												<th>Nom & Prenom</th>
-												<th>e-mail</th>
-												<th>Centre/Matricule</th>
-												<th>Type</th>
-												<th>Status</th>
-												<th>Telephone</th>
-												<th>Action</th>
 
-											</tr>
-										</thead>
-										<tbody>
-
-											<tr>
-												<td>
-													<div class="form-check custom-checkbox ms-2">
-														<input type="checkbox" class="form-check-input" id="customCheckBox17" required="">
-														<label class="form-check-label" for="customCheckBox17"></label>
-													</div>
-												</td>
-
-												<td>
-													<div>
-														<a href="#" class="h5">Cindy Hawkins</a>
-													</div>
-													<small class="fs-12 text-muted"> <span class="font-weight-normal1">customer@gmail.com</span></small>
-
-												</td>
-												<td>Female</td>
-												<td>Customer</td>
-												<td>
-													<span class="badge light badge-success">14 March, 2015</span>
-												</td>
-												<td>
-													<span class="badge light badge-danger">20 Juna , 2019</span>
-												</td>
-												<td>
-													<span class="badge badge-danger">Inactive</span>
-												</td>
-												<td>
-													<div class="d-flex">
-														<a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-														<a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>
-													<div class="form-check custom-checkbox ms-2">
-														<input type="checkbox" class="form-check-input" id="customCheckBox18" required="">
-														<label class="form-check-label" for="customCheckBox18"></label>
-													</div>
-												</td>
-
-												<td>
-													<div>
-														<a href="#" class="h5">Timothy L. Brodbeck</a>
-													</div>
-													<small class="fs-12 text-muted"> <span class="font-weight-normal1">customer@gmail.com</span></small>
-
-												</td>
-												<td>Female</td>
-												<td>Customer</td>
-												<td>
-													<span class="badge light badge-success">12 March, 2015</span>
-												</td>
-												<td>
-													<span class="badge light badge-danger">27 May, 2016</span>
-												</td>
-												<td>
-													<span class="badge badge-success">Active</span>
-												</td>
-
-												<td>
-													<div class="d-flex">
-														<a href="javascript:void(0);" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fas fa-pencil-alt"></i></a>
-														<a href="javascript:void(0);" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
-													</div>
-												</td>
-											</tr>
-										</tbody>
 
 									</table>
 								</div>
@@ -348,9 +247,7 @@ session_start();
 				</div>
 			</div>
 		</div>
-		<!--**********************************
-            Content body end
-        ***********************************-->
+
 
 		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
@@ -376,33 +273,21 @@ session_start();
 				</div>
 			</div>
 		</div>
-
-		<!--**********************************
-            Footer start
-        ***********************************-->
-
-		<!--**********************************
-            Footer end
-        ***********************************-->
-
-		<!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-		<!--**********************************
-           Support ticket button end
-        ***********************************-->
-
-
 	</div>
-	<!--**********************************
-        Main wrapper end
-    ***********************************-->
+	<script>
+		const xhttp = new XMLHttpRequest();
 
-	<!--**********************************
-        Scripts
-    ***********************************-->
-	<!-- Required vendors -->
+		xhttp.onreadystatechange = function() {
+			if (this.readyState === 4 && this.status === 200) {
+				document.getElementById("example").innerHTML = this.responseText;
+			} else if (this.readyState === 4 && this.status !== 200) {
+				console.error("Error occurred: " + this.status);
+			}
+		};
+
+		xhttp.open("GET", "controller/compte/getComptes.php", true);
+		xhttp.send();
+	</script>
 	<script src="vendor/global/global.min.js"></script>
 	<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 
@@ -422,7 +307,5 @@ session_start();
 	<script src="asses/js/styleSwitcher.js"></script>
 
 </body>
-
-<!-- Mirrored from Zimys.dexignzone.com/xhtml/customers-list.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jan 2024 22:21:58 GMT -->
 
 </html>
