@@ -67,7 +67,7 @@ session_start();
 					<div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
 							<div class="dashboard_bar">
-								Liste Des Comptes
+								Ajout Compte
 							</div>
 						</div>
 
