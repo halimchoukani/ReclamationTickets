@@ -280,7 +280,7 @@ session_start();
 						</div>
 					</div>
 					<div class="card-footer justify-content-end">
-						<button type="submit" class="btn btn-primary">Create Compte</button>
+						<button type="submit" class="btn btn-primary" name="btn">Create Compte</button>
 					</div>
 
 					</form>
