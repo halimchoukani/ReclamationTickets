@@ -17,13 +17,7 @@ if (isset($_POST["btn"])) {
     $tels = htmlspecialchars($_POST['nums']);
     $noms = htmlspecialchars($_POST['noms']);
     $adresse = htmlspecialchars($_POST['adresse']);
-    if(isset($_post['matricule'])){
-        $matricule = htmlspecialchars($_POST['matricule']);
-        $type = 'admin';
-    }else{
-        $matricule = 'null';
-        $type = 'client';
-    }
+    
     $genre = htmlspecialchars($_POST['flexRadioDefault']);
     if ($email == "" || $mdp == "" || $cmdp == "" || $nom == "" || $prenom == "" || $tel == "" || $noms == "" || $adresse == "" || $genre == "" || $tels == "") {
         $_SESSION["error"] = "Veuillez remplir tous les champs";
@@ -33,9 +27,16 @@ if (isset($_POST["btn"])) {
             $_SESSION["error"] = "Mot de passe non identique";
             $_SESSION["error-type"] = "bg-danger text-white";
         } else {
+            if(isset($_post['matricule'])){
+                $matricule = htmlspecialchars($_POST['matricule']);
+                $type = 'admin';
+            }else{
+                $matricule = null;
+                $type = 'client';
+            }
             $crud = new CRUD();
             if($type == 'admin'){
-                $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tels, $adresse);
+                $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "admin", $matricule, "Verifie", $genre, null, null, null);
             }else{
                 $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tels, $adresse);
             }

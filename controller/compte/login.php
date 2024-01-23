@@ -11,7 +11,6 @@ if (isset($_POST['btn'])) {
         $_SESSION['email'] = $email;
         $_SESSION['type'] = $result[5];
         $_SESSION['gender'] = $result[8];
-
         header('location:../../index.php');
     } else {
         $_SESSION['error'] = "Email ou mot de passe erroné , vérifiez vos données.";

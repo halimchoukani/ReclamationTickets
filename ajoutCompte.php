@@ -213,8 +213,8 @@ session_start();
 											<div class="form-group">
 												<label class=" form-label required">Mot De Passe</label>
 												<div class="position-relative">
-													<input type="password" name="mdp" id="dz-password" class="form-control" placeholder="123456">
-													<span class="show-pass eye">
+													<input type="password" name="mdp" id="exampleInputPassword" class="form-control" placeholder="123456">
+													<span id="eye1" class="show-pass eye">
 														<i class="fa fa-eye-slash"></i>
 														<i class="fa fa-eye"></i>
 													</span>
@@ -243,8 +243,8 @@ session_start();
 											<div class="form-group">
 												<label class=" form-label required">Confirmer Votre Mot De Passe</label>
 												<div class="position-relative">
-													<input type="password" name="cmdp" id="dz-password" class="form-control" value="123456">
-													<span class="show-pass eye">
+													<input type="password" name="cmdp" id="exampleRepeatPassword" class="form-control" placeholder="123456">
+													<span id="eye2" class="show-pass eye">
 														<i class="fa fa-eye-slash"></i>
 														<i class="fa fa-eye"></i>
 													</span>
@@ -282,35 +282,7 @@ session_start();
 					<div class="card-footer justify-content-end">
 						<button type="submit" class="btn btn-primary">Create Compte</button>
 					</div>
-					<script>
-						document.addEventListener('DOMContentLoaded', function() {
-							var adminRadio = document.getElementById('adminRadio');
-							var clientRadio = document.getElementById('clientRadio');
-							var adminInput = document.getElementById('adminInput');
-							if (adminRadio.checked) {
-									adminInput.style.display = 'block';
-									clientInput.style.display = 'none';
-								}
 
-								if (clientRadio.checked) {
-									clientInput.style.display = 'block';
-									adminInput.style.display = 'none';
-								}
-							adminRadio.addEventListener('change', function() {
-								if (adminRadio.checked) {
-									adminInput.style.display = 'block';
-									clientInput.style.display = 'none';
-								}
-							});
-
-							clientRadio.addEventListener('change', function() {
-								if (clientRadio.checked) {
-									clientInput.style.display = 'block';
-									adminInput.style.display = 'none';
-								}
-							});
-						});
-					</script>
 					</form>
 				</div>
 			</div>
@@ -341,9 +313,55 @@ session_start();
 	<script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
 	<script src="assets/js/custom.min.js"></script>
 	<script src="assets/js/deznav-init.js"></script>
-	<script src="assets/js/demo.js"></script>
-	<script src="assets/js/styleSwitcher.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var adminRadio = document.getElementById('adminRadio');
+			var clientRadio = document.getElementById('clientRadio');
+			var adminInput = document.getElementById('adminInput');
+			if (adminRadio.checked) {
+				adminInput.style.display = 'block';
+				clientInput.style.display = 'none';
+			}
 
+			if (clientRadio.checked) {
+				clientInput.style.display = 'block';
+				adminInput.style.display = 'none';
+			}
+			adminRadio.addEventListener('change', function() {
+				if (adminRadio.checked) {
+					adminInput.style.display = 'block';
+					clientInput.style.display = 'none';
+				}
+			});
+
+			clientRadio.addEventListener('change', function() {
+				if (clientRadio.checked) {
+					clientInput.style.display = 'block';
+					adminInput.style.display = 'none';
+				}
+			});
+		});
+		$(document).ready(function() {
+			var eyeElement = $("#eye1");
+			var eyeElement2 = $("#eye2");
+			var passwordInput = $("#exampleInputPassword");
+			var passwordInput2 = $("#exampleRepeatPassword");
+			eyeElement.click(function() {
+				if (eyeElement.hasClass("show-pass") && eyeElement.hasClass("eye") && eyeElement.hasClass("active")) {
+					passwordInput.attr("type", "text");
+				} else {
+					passwordInput.attr("type", "password");
+				}
+			});
+			eyeElement2.click(function() {
+				if (eyeElement2.hasClass("show-pass") && eyeElement2.hasClass("eye") && eyeElement2.hasClass("active")) {
+					passwordInput2.attr("type", "text");
+				} else {
+					passwordInput2.attr("type", "password");
+				}
+			});
+		});
+	</script>
 </body>
 
 
