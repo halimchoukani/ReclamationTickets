@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +14,7 @@
 
     <meta name="keywords" content="	admin dashboard, admin template, administration, analytics, bootstrap, bootstrap admin, coupon, deal, modern, responsive admin dashboard, ticket, ticket dashboard, ticket system, admin panel,	Ticketing admin, Dashboard template, Bootstrap HTML, Ticket management, Event ticketing, Responsive design, User-friendly interface, Efficiency, Streamlining operations, Event management, Ticket sales, Customizable template, Stylish design, Modern dashboard">
     <meta name="description" content="Discover Zimys, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
-
+    <title>Tickets</title>
     <meta property="og:title" content="Zimys - Ticketing Admin Dashboard Bootstrap HTML Template | DexignZone">
     <meta property="og:description" content="Discover Zimys, the ultimate solution for ticketing administration. Our Bootstrap HTML Template empowers you to streamline ticketing tasks, enhancing operational efficiency with style and ease. Simplify your processes and elevate your ticketing management experience today.">
     <meta property="og:image" content="page-error-404.html">
@@ -181,20 +186,19 @@
                         xhttp.onload = function() {
                             document.getElementById("exemple").innerHTML = this.responseText;
                         }
-                        xhttp.open("GET", "../ReclamationTickets/controller/ticket/gettickets.php");
+                        xhttp.open("GET", "controller/ticket/gettickets.php");
                         xhttp.send();
 
                     }
                     setInterval(table, 6000);
                 </script>
                 <script src="vendor/global/global.min.js"></script>
-                <script src="../ReclamationTickets/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
-                <script src="../ReclamationTickets/vendor/bootstrap-datetimepicker/js/moment.js"></script>
-                <script src="../ReclamationTickets/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-                <script src="js/custom.min.js"></script>
+                <script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+                <script src="vendor/bootstrap-datetimepicker/js/moment.js"></script>
+                <script src="vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+                <script src="assets/js/custom.min.js"></script>
                 <script src="js/deznav-init.js"></script>
-                <script src="js/demo.js"></script>
-                <script src="js/styleSwitcher.js"></script>
+                
 </body>
 
 </html>

@@ -73,10 +73,10 @@ WHERE
         return $stmt->fetch()[0];
     }
 
-    public function supprimerTicket($tickets)
+    public function getDiagByid($id)
     {
-        $req = "DELETE FROM immobilier WHERE reference={$tickets}";
-        $stmt = $this->pdo->exec($req);
-        return $stmt;
+        $req = "SELECT Diagnostic FROM ticket WHERE ticketId={$id}";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch()[0];
     }
 }

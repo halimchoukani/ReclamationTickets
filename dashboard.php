@@ -1,9 +1,9 @@
-<?php session_start() ?>
+<?php session_start();
+$gender = $_SESSION["gender"];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from Zimys.dexignzone.com/xhtml/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 21 Jan 2024 22:21:16 GMT -->
 
 <head>
 	<!-- Title -->
@@ -36,11 +36,11 @@
 	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 	<link href="vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 	<link href="vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
-	<link class="main-css" href="css/style.css" rel="stylesheet">
+	<link class="main-css" href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body onload="table()">
 	<div id="preloader">
 		<div class="sk-three-bounce">
 			<div class="sk-child sk-bounce1"></div>
@@ -66,7 +66,7 @@
 					<div class="collapse navbar-collapse justify-content-between">
 						<div class="header-left">
 							<div class="dashboard_bar">
-								Liste Des Comptes
+								Dashboard
 							</div>
 						</div>
 
@@ -88,6 +88,7 @@
 							<li class="nav-item dropdown header-profile">
 								<a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
 									<img src="assets/images/profile/<?php echo $_SESSION['gender'] ?>.png" width="20" alt="">
+									<?php echo $_SESSION['email'] ?>
 								</a>
 								<div class="dropdown-menu dropdown-menu-end">
 									<a href="app-profile.html" class="dropdown-item ai-icon">
@@ -162,56 +163,42 @@
 		<!--**********************************
             Content body start
         ***********************************-->
-		<div class="content-body rightside-event">
+		<div class="content-body">
 			<!-- row -->
 			<div class="container-fluid">
+
 				<div class="row">
 					<div class="col-xl-12">
-						<div id="user-activity" class="card">
-							<div class="card-header border-0 pb-0 d-sm-flex d-block">
-								<div>
-									<h4 class="card-title mb-1">Nombres des réclamations</h4>
-								</div>
-								<div class="card-action card-tabs mt-3 mt-sm-0">
-									<ul class="nav nav-tabs" role="tablist">
-										<li class="nav-item">
-											<a class="nav-link active" data-bs-toggle="tab" href="#user" role="tab" aria-selected="true">
-												Monthly
-											</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" data-bs-toggle="tab" href="#user" role="tab" aria-selected="false">
-												Weekly
-											</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" data-bs-toggle="tab" href="#user" role="tab" aria-selected="false">
-												Today
-											</a>
-										</li>
-									</ul>
-								</div>
+						<div class="card ">
+							<div class="card-header border-0 pb-0 ">
+								<h4 class="text-black">Derniers réclamations</h4>
 							</div>
-							<div class="card-body">
-								<div class="tab-content" id="myTabContent">
-									<div class="tab-pane fade active show" id="user" role="tabpanel">
-										<div class="chartjs-size-monitor">
-											<div class="chartjs-size-monitor-expand">
-												<div class=""></div>
-											</div>
-											<div class="chartjs-size-monitor-shrink">
-												<div class=""></div>
+							<div class="card-body timeline pb-2 dz-scroll height370  loadmore-content" id="RecentActivityContent">
+								<div class="timeline-panel align-items-end">
+									<div class="media me-3">
+										<div class="card">
+											<div class="card-body">
+												<div class="table-responsive">
+													<table class="table header-border table-responsive-sm" id="exemple">
+
+													</table>
+												</div>
 											</div>
 										</div>
-										<canvas id="activityLine" class="chartjs chartjs-render-monitor" height="350" style="display: block; width: 1041px; height: 350px;" width="1041"></canvas>
+
+
+									</div>
+									<div class="card-footer border-0 pt-0 text-center">
+										<a href="javascript:void(0);" class="btn-link dz-load-more btn" id="RecentActivity" rel="ajax/recentactivity.html">View more<i class="fa fa-angle-down ms-2 scale-2"></i></a>
 									</div>
 								</div>
 							</div>
+
 						</div>
 					</div>
 					<div class="col-xl-6 col-xxxl-12 col-lg-6">
 						<div class="card">
-							<div class="card-header border-0 pb-3 d-sm-flex d-block ">
+							<div class="card-header border-0 pb-3 d-sm-flex">
 								<h4 class="card-title">Derniers réclamations</h4>
 								<div class="d-flex mt-3 mt-sm-0">
 									<select class="default-select form-control form-control-sm me-3 style-1" aria-label="Default select example">
@@ -264,39 +251,12 @@
 						<div class="card widget-media">
 							<div class="card-header border-0 pb-0 ">
 								<h4 class="text-black">Derniers réclamations</h4>
-								<div class="dropdown ms-auto text-end">
-									<div class="btn-link" data-bs-toggle="dropdown">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-											<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-												<rect x="0" y="0" width="24" height="24"></rect>
-												<circle fill="#000000" cx="12" cy="5" r="2"></circle>
-												<circle fill="#000000" cx="12" cy="12" r="2"></circle>
-												<circle fill="#000000" cx="12" cy="19" r="2"></circle>
-											</g>
-										</svg>
-									</div>
-									<div class="dropdown-menu dropdown-menu-end">
-										<a class="dropdown-item" href="javascript:void(0);">Show more</a>
-									</div>
-								</div>
 							</div>
 							<div class="card-body timeline pb-2 dz-scroll height370  loadmore-content" id="RecentActivityContent">
 								<div class="timeline-panel align-items-end">
 									<div class="media me-3">
-										<?php
-										if ($gender = "male") {
-											echo "<img class='rounded-circle' alt='image' width='50' src='assets/images/profile/male.png'>";
-										} else {
-											echo "<img class='rounded-circle' alt='image' width='50' src='assets/images/profile/female.png'>";
-										}
-										echo "</div>
-									<div class='media-body'>
-										<h5 class='mb-1'><a class='text-black' href=''>$prenom $nom </a></h5>
-										<p class='d-block mb-0 text-primary'><i class='las la-ticket-alt me-2 scale5 ms-1'></i>Height Performance conert 2020</p>
-									</div>
-										<p class='mb-0 fs-14'>2m ago</p>
-									</div>";
-										?>
+										<img class='rounded-circle' alt='image' width='50' src='assets/images/profile/<?php echo $gender ?>.png'>
+
 
 									</div>
 									<div class="card-footer border-0 pt-0 text-center">
@@ -304,93 +264,11 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-xl-12">
-								<div class="card">
-									<div class="card-body">
-										<div class="row mx-0">
-											<div class="col-sm-12 col-lg-4 px-0">
-												<h2 class="fs-40 text-black font-w600">862,441 <small class="fs-18 ms-2 font-w600 mb-1">pcs</small></h2>
-												<p class="font-w100 fs-20 text-black">Ticket Sold Today</p>
-												<div class="justify-content-between border-0 d-flex fs-14 align-items-end">
-													<a href="analytics.html" class="text-primary">View more <i class="las la-long-arrow-alt-right scale5 ms-2"></i></a>
-													<div class="text-end">
-														<span class="peity-primary" data-style="width:100%;">0,2,1,4</span>
-														<h3 class="mt-2 mb-1">+4%</h3>
-														<span>than last day</span>
-													</div>
-												</div>
-											</div>
-											<div class="col-sm-12 col-lg-8 px-0">
-												<canvas id="ticketSold" height="200"></canvas>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+
 						</div>
 					</div>
 				</div>
-				<!--**********************************
-            Content body end
-        ***********************************-->
-
-
-
-
-
-				<!--**********************************
-            Footer start
-        ***********************************-->
-
-				<!--**********************************
-            Footer end
-        ***********************************-->
-
-				<!-- modal box strat -->
-				<!-- Modal -->
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-					<div class="modal-dialog">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="exampleModalLabel">Event Title</h1>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-							<div class="modal-body">
-								<div class="row">
-									<div class="col-xl-12">
-										<div class="mb-3">
-											<label for="exampleFormControlInput1" class="form-label">Event Name</label>
-											<input type="text" class="form-control" id="exampleFormControlInput1" placeholder="The Story Of Danau Toba">
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save changes</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!--**********************************
-           Support ticket button start
-        ***********************************-->
-
-				<!--**********************************
-           Support ticket button end
-        ***********************************-->
-
-
 			</div>
-			<!--**********************************
-        Main wrapper end
-    ***********************************-->
-
-			<!--**********************************
-        Scripts
-    ***********************************-->
-			<!-- Required vendors -->
 			<script src="vendor/global/global.min.js"></script>
 			<script src="vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
 			<script src="vendor/chart-js/chart.bundle.min.js"></script>
@@ -406,7 +284,18 @@
 			<script src="assets/js/custom.min.js"></script>
 			<script src="assets/js/deznav-init.js"></script>
 			<script src="assets/js/demo.js"></script>
+			<script>
+                    function table() {
+                        const xhttp = new XMLHttpRequest();
+                        xhttp.onload = function() {
+                            document.getElementById("exemple").innerHTML = this.responseText;
+                        }
+                        xhttp.open("GET", "controller/ticket/gettickets.php");
+                        xhttp.send();
 
+                    }
+                    setInterval(table, 6000);
+                </script>
 
 
 </body>
