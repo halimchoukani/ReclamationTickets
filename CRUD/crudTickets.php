@@ -21,7 +21,8 @@ class CrudTicket
 
     public function getTickets()
     {
-        $req = "SELECT 
+        if($_SESSION['type']=='admin'){
+            $req = "SELECT 
     t.ticketId, 
     t.demande, 
     t.DateHeure, 
@@ -43,7 +44,30 @@ LEFT JOIN
     cloture c ON c.ticket_id = t.ticketId
 WHERE 
     (c.cloture_par = '{$_SESSION['email']}' AND t.Status = 'Cloture') OR (t.Status = 'enCours');
+";}
+else{
+    $req = "SELECT 
+    t.ticketId, 
+    t.demande, 
+    t.DateHeure, 
+    s.nom AS societe_nom, 
+    t.Diagnostic, 
+    a.nom AS account_nom, 
+    t.Categorie, 
+    t.Priorite, 
+    t.Status,
+    c.cloture_par,
+    c.dateheur AS cloture_dateheur
+FROM 
+    ticket t
+JOIN 
+    account a ON a.email = t.contact
+JOIN 
+    societe s ON s.id = a.centre
+LEFT JOIN
+    cloture c ON c.ticket_id = t.ticketId;
 ";
+}
         $stmt = $this->pdo->prepare($req);
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_NUM);
@@ -78,5 +102,23 @@ WHERE
         $req = "SELECT Diagnostic FROM ticket WHERE ticketId={$id}";
         $stmt = $this->pdo->query($req);
         return $stmt->fetch()[0];
+    }
+    public function clotureExist($id){
+        $req = "SELECT count(ticket_id) FROM cloture WHERE ticket_id={$id}";
+        $stmt = $this->pdo->query($req);
+        return $stmt->fetch()[0];
+    }
+    public function cloture($id,$diag){
+        $this->updateDiag($id,$diag);
+        if($this->clotureExist($id)==0){
+            $req = "INSERT INTO cloture VALUES({$id},'{$_SESSION['email']}',now())";
+            $stmt = $this->pdo->exec($req);
+            return $stmt;
+        }
+    }
+    public function updateDiag($id,$diag){
+        $req = "UPDATE ticket SET Diagnostic='{$diag}',Status='Cloture' WHERE ticketId={$id}";
+        $stmt = $this->pdo->exec($req);
+        return $stmt;
     }
 }

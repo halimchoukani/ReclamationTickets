@@ -38,7 +38,7 @@ if (isset($_GET['id'])) {
                         <h4 class="card-title"><?php echo "Diagnostic de la ticket N°$ticketid:<br>"; ?></h4>
                     </div>
                     <div class="mb-1">
-                                    <textarea class="form-control" rows="8" id="diagexist"></textarea>
+                                    <textarea class="form-control" rows="8" id="diagexist" name="diagnostic"></textarea>
                                 </div>
                     <input type='submit' name="diag" class="btn btn-primary" value='Enregistrer'/>
                     

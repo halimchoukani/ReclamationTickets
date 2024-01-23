@@ -38,8 +38,14 @@ $fait = $crud->getByStatutNum("Cloture");
     } else {
       echo "<td><span class='badge badge-success'>" . $row[8] . "</span></td>";
     }
-    if ($row[8] == "enCours" && ($_SESSION["type"] == "admin" || $_SESSION["type"] == "supervisor")) {
+    if ($row[8] == "enCours" ) {
       echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Cloturer</button></a></td>";
+    }else{
+      if($row[4]==''){
+        echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Ajouter Diag</button></a></td>";
+      }else{
+        echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Modifier</button></a></td>";
+      }
     }
     echo "</tr>";
   }
