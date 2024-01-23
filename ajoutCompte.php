@@ -187,11 +187,11 @@ session_start();
 
 									<div class="mb-3 d-flex justify-content-center">
 										<div class="form-check form-check-inline mx-2">
-											<input class="form-check-input" type="radio" name="userType" id="adminRadio" value="admin" required>
+											<input class="form-check-input" type="radio" name="userType" id="adminRadio" value="admin">
 											<label class="form-check-label" for="adminRadio">Admin</label>
 										</div>
 										<div class="form-check form-check-inline mx-2">
-											<input class="form-check-input" type="radio" name="userType" id="clientRadio" value="client" required>
+											<input class="form-check-input" type="radio" name="userType" id="clientRadio" value="client" checked>
 											<label class="form-check-label" for="clientRadio">Client</label>
 										</div>
 									</div>
@@ -213,7 +213,7 @@ session_start();
 											<div class="form-group">
 												<label class=" form-label required">Mot De Passe</label>
 												<div class="position-relative">
-													<input type="password" name="mdp" id="dz-password" class="form-control" value="123456">
+													<input type="password" name="mdp" id="dz-password" class="form-control" placeholder="123456">
 													<span class="show-pass eye">
 														<i class="fa fa-eye-slash"></i>
 														<i class="fa fa-eye"></i>
@@ -224,18 +224,18 @@ session_start();
 										</div>
 
 										<div class="col-sm-6 mb-3">
-											<label class="form-label required">Type de Compte</label>
+											<label class="form-label required">Sexe</label>
 
 
 
 											<div class="mb-3 d-flex ">
 												<div class="form-check form-check-inline mx-2">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="adminRadio" value="admin" required>
-													<label class="form-check-label" for="adminRadio">Homme</label>
+													<input class="form-check-input" type="radio" name="flexRadioDefault" id="hommeRadio" value="male" required>
+													<label class="form-check-label" for="hommeRadio">Homme</label>
 												</div>
 												<div class="form-check form-check-inline mx-2">
-													<input class="form-check-input" type="radio" name="flexRadioDefault" id="clientRadio" value="client" required>
-													<label class="form-check-label" for="clientRadio">Femme</label>
+													<input class="form-check-input" type="radio" name="flexRadioDefault" id="femaleRadio" value="female" required>
+													<label class="form-check-label" for="femaleRadio">Femme</label>
 												</div>
 											</div>
 										</div>
@@ -280,14 +280,22 @@ session_start();
 						</div>
 					</div>
 					<div class="card-footer justify-content-end">
-						<button class="btn btn-primary">Create Compte</button>
+						<button type="submit" class="btn btn-primary">Create Compte</button>
 					</div>
 					<script>
 						document.addEventListener('DOMContentLoaded', function() {
 							var adminRadio = document.getElementById('adminRadio');
 							var clientRadio = document.getElementById('clientRadio');
 							var adminInput = document.getElementById('adminInput');
+							if (adminRadio.checked) {
+									adminInput.style.display = 'block';
+									clientInput.style.display = 'none';
+								}
 
+								if (clientRadio.checked) {
+									clientInput.style.display = 'block';
+									adminInput.style.display = 'none';
+								}
 							adminRadio.addEventListener('change', function() {
 								if (adminRadio.checked) {
 									adminInput.style.display = 'block';

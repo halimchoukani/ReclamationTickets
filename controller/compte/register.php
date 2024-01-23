@@ -7,7 +7,6 @@ require_once '../../crud/crud_code.php';
 $_SESSION["error"] = "";
 $_SESSION["error-type"] = "";
 
-
 if (isset($_POST["btn"])) {
     $email = htmlspecialchars($_POST['email']);
     $mdp = htmlspecialchars($_POST['mdp']);
@@ -18,6 +17,13 @@ if (isset($_POST["btn"])) {
     $tels = htmlspecialchars($_POST['nums']);
     $noms = htmlspecialchars($_POST['noms']);
     $adresse = htmlspecialchars($_POST['adresse']);
+    if(isset($_post['matricule'])){
+        $matricule = htmlspecialchars($_POST['matricule']);
+        $type = 'admin';
+    }else{
+        $matricule = 'null';
+        $type = 'client';
+    }
     $genre = htmlspecialchars($_POST['flexRadioDefault']);
     if ($email == "" || $mdp == "" || $cmdp == "" || $nom == "" || $prenom == "" || $tel == "" || $noms == "" || $adresse == "" || $genre == "" || $tels == "") {
         $_SESSION["error"] = "Veuillez remplir tous les champs";
@@ -28,7 +34,12 @@ if (isset($_POST["btn"])) {
             $_SESSION["error-type"] = "bg-danger text-white";
         } else {
             $crud = new CRUD();
-            $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tels, $adresse);
+            if($type == 'admin'){
+                $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tels, $adresse);
+            }else{
+                $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tels, $adresse);
+            }
+            
             if ($genre == "male") {
                 $genre = "Monsieur";
             } else {
