@@ -1,7 +1,6 @@
 <?php
 session_start();
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -141,7 +140,7 @@ session_start();
 						<ul aria-expanded="false">
 							<li><a href="gestcomptessa.php">Gestion Des Comptes</a></li>
 							<?php if ($_SESSION['type'] == "supervisor") {
-								echo "<li><a href='analytics.html'>Ajouter Un Compte</a></li>";
+								echo "<li><a href='ajoutCompe.php'>Ajouter Un Compte</a></li>";
 							}
 
 							?>
