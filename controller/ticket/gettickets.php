@@ -70,7 +70,7 @@ $fait = $crud->getByStatutNum("Cloture");
       echo "<td><span class='badge badge-success'>" . $row[8] . "</span></td>";
     }
     if ($row[8] == "enCours") {
-      echo "<td><a href='../ReclamationTickets/controller/ticket/cloture.php?id=" . $row[0] . "'><button>Cloturer</button></a></td>";
+      echo "<td><a href='../../cloture.php?id=" . $row[0] . "'><button>Cloturer</button></a></td>";
     }
     echo "</tr>";
   }

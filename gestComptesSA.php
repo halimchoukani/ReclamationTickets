@@ -132,7 +132,6 @@ if (!isset($_SESSION['email'])) {
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="dashboard.php">Dashboard</a></li>
-							<li><a href="analytics.html">Analytics</a></li>
 						</ul>
 					</li>
 					<li>
@@ -151,7 +150,7 @@ if (!isset($_SESSION['email'])) {
 
 
 					</li>
-					<li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
+					<li><a class="has-arrow ai-icon" href="tickets.php" aria-expanded="false">
 							<i class="flaticon-381-add-1"></i>
 							<span class="nav-text">Tickets </span>
 						</a>

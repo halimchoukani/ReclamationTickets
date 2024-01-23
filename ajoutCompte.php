@@ -131,7 +131,6 @@ session_start();
 						</a>
 						<ul aria-expanded="false">
 							<li><a href="index.php">Dashboard</a></li>
-							<li><a href="analytics.php">Analytics</a></li>
 						</ul>
 					</li>
 					<li>
@@ -150,7 +149,7 @@ session_start();
 
 
 					</li>
-					<li><a class="has-arrow ai-icon" href="javascript:void(0)" aria-expanded="false">
+					<li><a class="has-arrow ai-icon" href="tickets.php" aria-expanded="false">
 							<i class="flaticon-381-add-1"></i>
 							<span class="nav-text">Tickets </span>
 						</a>

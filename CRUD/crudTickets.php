@@ -73,10 +73,4 @@ WHERE
         return $stmt->fetch()[0];
     }
 
-    public function supprimerTicket($tickets)
-    {
-        $req = "DELETE FROM immobilier WHERE reference={$tickets}";
-        $stmt = $this->pdo->exec($req);
-        return $stmt;
-    }
 }
