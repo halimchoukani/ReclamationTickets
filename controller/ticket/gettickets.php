@@ -39,7 +39,7 @@ $fait = $crud->getByStatutNum("Cloture");
       echo "<td><span class='badge badge-success'>" . $row[8] . "</span></td>";
     }
     if ($row[8] == "enCours" && ($_SESSION["type"] == "admin" || $_SESSION["type"] == "supervisor")) {
-      echo "<td><a href='controller/ticket/cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Cloturer</button></a></td>";
+      echo "<td><a href='cloture.php?id=" . $row[0] . "'><button class='btn btn-primary'>Cloturer</button></a></td>";
     }
     echo "</tr>";
   }
