@@ -66,7 +66,7 @@ if (isset($_GET['id'])) {
         function diagex() {
       const xhttp = new XMLHttpRequest();
       xhttp.onload = function() {
-        document.getElementById("diagexiste").innerHTML = this.responseText;
+        document.getElementById("diagexist").innerHTML = this.responseText;
       }
       xhttp.open("GET", "controller/ticket/cloture.php");
       xhttp.send();
