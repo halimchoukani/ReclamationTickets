@@ -53,22 +53,22 @@ if (isset($_SESSION["email"])) {
                             <div class="text-center mb-3">
                                 <a href="index.html"><img class="logo-auth" src="assets/images/logo-full.png" alt=""></a>
                             </div>
-
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Login</h1>
-                            </div>
-                            <form class="user" action="/controller/compte/login.php" method="post">
-                                <?php
-                                if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
-                                    echo '<div class="card shadow mb-4">
+                            <?php
+                            if (isset($_SESSION["error"]) && isset($_SESSION["error-type"])) {
+                                echo '<div class="text-center">
                                     <div class="card-body ' . $_SESSION["error-type"] . '" id="card">
                                         ' . $_SESSION["error"] . '
                                     </div>
                                 </div>';
-                                    unset($_SESSION["error"]);
-                                    unset($_SESSION["error-type"]);
-                                }
-                                ?>
+                                unset($_SESSION["error"]);
+                                unset($_SESSION["error-type"]);
+                            }
+                            ?>
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Login</h1>
+                            </div>
+                            <form class="user" action="/controller/compte/login.php" method="post">
+
                                 <div class="form-group mb-4">
                                     <label class="form-label" for="exampleInputEmail">Email</label>
                                     <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="exemple@exemple.com">

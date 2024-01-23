@@ -140,7 +140,7 @@ if (isset($_SESSION["email"])) {
 
                                 </div>
                                 <div class="form-group">
-                                    <label class="form-label" for="exampleTextArea">Adresse de l'entreprise
+                                    <label class="form-label"   for="exampleTextArea">Adresse de l'entreprise
                                     </label>
                                     <input type="text" name="adresse" class="form-control form-control-user" id="exampleTextArea" placeholder="Adresse de la Societe">
 
