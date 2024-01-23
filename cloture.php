@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
                     <div class="mb-1">
                                     <textarea class="form-control" rows="8" id="diagexist"></textarea>
                                 </div>
-                    <input type='submit' class="btn btn-primary" value='Enregistrer'/>
+                    <input type='submit' name="diag" class="btn btn-primary" value='Enregistrer'/>
                     
                 </div>
             </div>
