@@ -73,13 +73,10 @@ WHERE
         return $stmt->fetch()[0];
     }
 
-<<<<<<< HEAD
-=======
     public function getDiagByid($id)
     {
         $req = "SELECT Diagnostic FROM ticket WHERE ticketId={$id}";
         $stmt = $this->pdo->query($req);
         return $stmt->fetch()[0];
     }
->>>>>>> 1347168b533cfa567427db81b8dd44ab0226b3e4
 }
