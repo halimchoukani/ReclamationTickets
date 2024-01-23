@@ -30,18 +30,18 @@ if (isset($_GET['id'])) {
     <link href="https://tixia.dexignzone.com/laravel/demo/css/style.css" rel="stylesheet" type="text/css">     
 </head>
 <body onload="diagex()">
-<form name='form1' method='post' action="controller/cloture.php?id=<?php echo $ticketid?>">
+<form name='form1' method='post' action="controller/ticket/cloture.php?id=<?php echo $ticketid?>">
         <div class="row">
             <div class="col-xl-12 col-xxl-12">
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title"><?php echo "Diagnostic de la ticket N°$ticketid:<br>"; ?></h4>
                     </div>
-                    <div class="card-body custom-ekeditor ct-ticket">
-                    <div class="ck ck-editor__main" role="presentation"><div class="ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred" lang="en" dir="ltr" role="textbox" aria-label="Rich Text Editor, main" contenteditable="true" name="diag"><p id="diagexist"><br data-cke-filler="true">
-                </p></div></div><input type='submit' value='Enregistrer'/></div>
+                    <div class="mb-1">
+                                    <textarea class="form-control" rows="8" id="diagexist"></textarea>
+                                </div>
+                    <input type='submit' class="btn btn-primary" value='Enregistrer'/>
                     
-                    </div>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@ if (isset($_GET['id'])) {
       xhttp.onload = function() {
         document.getElementById("diagexist").innerHTML = this.responseText;
       }
-      xhttp.open("GET", "controller/ticket/cloture.php");
+      xhttp.open("GET", "controller/ticket/cloture.php?id=<?php echo $ticketid ; ?>");
       xhttp.send();
 
     }

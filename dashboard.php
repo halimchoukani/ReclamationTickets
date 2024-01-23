@@ -137,7 +137,6 @@ $gender = $_SESSION["gender"];
 							<?php if ($_SESSION['type'] == "supervisor") {
 								echo "<li><a href='ajoutCompte.php'>Ajouter Un Compte</a></li>";
 							}
-
 							?>
 						</ul>
 
