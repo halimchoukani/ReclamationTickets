@@ -147,8 +147,6 @@ if (!isset($_SESSION['email'])) {
 
 							?>
 						</ul>
-
-
 					</li>
 					<li><a class="has-arrow ai-icon" href="tickets.php" aria-expanded="false">
 							<i class="flaticon-381-add-1"></i>
