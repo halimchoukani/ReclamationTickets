@@ -91,7 +91,7 @@ class CRUD
         $res = $this->pdo->query($sql);
         return $res->fetch(PDO::FETCH_NUM);
     }
-    function SupprimerApp($email)
+    function SupprimerCompte($email)
     {
         $sql = "delete from account where email=$email;";
         $res = $this->pdo->exec($sql);
@@ -105,7 +105,6 @@ class CRUD
     }
     function Lister()
     {
-
         $sql = "select *  from  account where type != 'supervisor';";
         $res = $this->pdo->query($sql);
         return $res->fetchAll(PDO::FETCH_NUM);

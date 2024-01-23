@@ -38,7 +38,7 @@ if (isset($_POST["btn"])) {
             if($type == 'admin'){
                 $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "admin", $matricule, "Verifie", $genre, null, null, null);
             }else{
-                $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", "null", "enCours", $genre, $noms, $tels, $adresse);
+                $result = $crud->Register($nom, $prenom, $email, $tel, $mdp, "client", null, "enCours", $genre, $noms, $tels, $adresse);
             }
             
             if ($genre == "male") {
