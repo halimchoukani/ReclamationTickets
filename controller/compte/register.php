@@ -59,4 +59,4 @@ if (isset($_POST["btn"])) {
         }
     }
 }
-header("Location: ../../register.php");
+header("location: ../../register.php");
